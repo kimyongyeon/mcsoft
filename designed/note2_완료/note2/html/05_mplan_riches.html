@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg_dot">
+
+<!-- header -->
+<div class="header">
+    <h1>나의 재물운</h1>
+    <button type="button" class="btn_back">이전</button>
+    <button type="button" class="btn_text">다음단계</button>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div class="riches">
+    <div class="r_input">
+        <dl>
+            <dt>성명</dt>
+            <dd><input type="text" class="input"></dd>
+        </dl>
+        <dl>
+            <dt>양력생년월일</dt>
+            <dd><input type="text" class="input"></dd>
+        </dl>
+        <div>
+            <button type="button" class="btn1">재물운 보기</button>
+        </div>
+    </div>
+
+    <div class="r_refer">
+        <strong>&lt;참고&gt;</strong>
+        <ol>
+            <li>나의 재물운은 정확한 “성명”과 “양력 생년월일을 모두 입력해야 출력이 가능합니다.</li>
+            <li>머니플랜 과정은 &lt;나의 재물운&gt;을 포함해 총 5단계로 진행되며, 각 단계별 입력내용을 성실하게 이행해야 다음 단계로 이동할 수 있으니 주의하시기 바랍니다.</li>
+            <li>재물운 보기를 끝낸후  오른쪽 상단에 있는<br><span>다음단계</span> 를 클릭하면 다음단계로 이동합니다.</li>
+        </ol>
+    </div>
+
+    <div id="mySwipe" class="swipe r_swipe" style="display:none">
+        <div>
+            <!-- 1. 재물수 -->
+            <div>
+                <strong class="ico_r1">재물수1</strong>
+                재테크를 통해 재물을 모으기 보다는 다른 사람들에게 자신의 아이디어나 기획을 인정받는 것에 더 큰 관심이 있으며, 타인의 인정을 받을 때 삶의 희열을 느끼게 됩니다. 따라서 자신의 재능이 발휘될 수 있는 곳을 찾아 이동하다보니 한 곳에서 안정적으로 재물을 쌓기 보다는, 팔방미인적인 자신의 재능을 발휘해 여러 곳에서 수입을 얻을 수 있습니다. 타고난 재물운은 좋은 편이며 혁신적인 아이디어를 통해 큰돈을 거머쥘 수 있습니다.
+            </div>
+            <!-- /1. 재물수 -->
+
+            <!-- 2. 재물운 조언 -->
+            <div>
+                <strong class="ico_r0">재물운 조언</strong>
+                재물운을 향상시킬 수 있는 직종은 비즈니스, 건강과 엔터테인먼트 산업, 정부기관이나 서점과 관련된 일 등입니다. 또한 다른 사람을 리드하기를 좋아하는 반면 명령받는 것을 좋아하지 않는 성격이라 굳이 다른 사람 밑에서 얼굴 붉히며 불만족을 감수하기 보다는 용기를 가지고 독창적인 아이디어로 독립해 보는 것도 좋습니다. 다만 중요한 결정의 순간에 확신이 결여되거나 지체하는 버릇은 수정하는 것이 좋으며, 리더십을 함양하는 것이 도움이 됩니다.
+            </div>
+            <!-- /2. 재물운 조언 -->
+        </div>
+        <ul id="myIndicator" class="indicator">
+            <li class="on"><span>1</span></li>
+            <li><span>2</span></li>
+        </ul>
+    </div>
+</div>
+<!-- /content -->
+
+<!-- script -->
+<script src="../js/swipe.js"></script>
+<script>
+var bullets = document.getElementById('myIndicator').getElementsByTagName('li');
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+    startSlide: 0,
+    speed: 400,
+    continuous: false,
+    disableScroll: false,
+    stopPropagation: false,
+    callback: function(pos) {
+        var i = bullets.length;
+        while (i--) {
+            bullets[i].className = ' ';
+        }
+        bullets[pos].className = 'on';
+    },
+    transitionEnd: function(index, elem) {}
+});
+</script>
+
+</body>
+</html>

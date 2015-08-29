@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>고객 일정</h1>
+	    <button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_edit">편집</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div class="plan_tit">
+		<h2 class="sales2"><em>AP</em>홍길동 고객님과의 약속</h2>
+	</div>
+	<ul class="plan_view">
+		<li>
+			<dl class="hbox js">
+				<dt>장소 :</dt>
+				<dd class="flex ml5">서울시 서초구 서초대로78길 42 현대 기림 빌딩 1306호 MC Soft</dd>
+			</dl>
+		</li>
+		<li>
+			<dl class="hbox">
+				<dt>일시 :</dt>
+				<dd class="ml5">2013.12.11(수) 오전 10:30</dd>
+			</dl>
+			<dl class="hbox sc">
+				<dt>약속 보내기</dt>
+				<dd class="flex ml20"><button type="button" class="btn_send">약속 보내기</button></dd>
+				<dt>위치 보기</dt>
+				<dd class="flex ml20"><button type="button" class="btn_map">위치 보기</button></dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>메모</dt>
+				<dd>투자 상품에 관심 있음</dd>
+			</dl>
+		</li>
+		<li>
+			<dl class="hbox">
+				<dt>다음 일정 :</dt>
+				<!-- 피드백(성공) 후 일정 미추가 -->
+				<dd class="ml5 red" style="display:none">없음</dd>
+				<!-- 피드백(성공) 후 다음 일정 - 저장 -->
+				<dd class="ml5 sales4">PT</dd>
+			</dl>
+		</li>
+		<li>
+			<dl class="hbox jc">
+				<dt>피드백 :</dt>
+				<dd class="plan_feed1" style="display:none">
+					<!-- Default: 성공, 재시도 -->
+					<!-- 피드백(성공) 후 일정 미추가: 다음 일정, 피드백 수정 -->
+					<!-- 피드백 재시도 후 TA 미등록 - 취소: TA 등록, 피드백 수정 -->
+					<button type="button" class="btn2">성공</button>
+					<button type="button" class="btn1">재시도</button>
+				</dd>
+				<!-- 피드백(성공) 후 다음 일정 - 저장: 성공 -->
+				<!-- 피드백(재시도) 후 TA 등록 - 저장: 재시도 -->
+				<dd class="plan_feed2" style="display:block">
+					<em>성공</em>
+					<img src="../img/ico_welldone.png" alt="참잘했어요">
+					<button type="button" class="btn2">피드백 수정</button>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

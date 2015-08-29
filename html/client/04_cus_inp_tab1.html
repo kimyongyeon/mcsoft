@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>고객 등록</h1>
+	    <button type="button" class="btn_reset">취소</button>
+	    <button type="button" class="btn_submit">저장</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab5">
+		<li class="active"><button type="button">기본 정보</button></li>
+		<li><button type="button">상세 정보</button></li>
+		<li><button type="button">재무 설계</button></li>
+		<li><button type="button">계약 정보</button></li>
+		<li><button type="button">프로세스</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="cus_info">
+		<div class="thumb">
+			<img src="../img/thumb_cus1.png" alt="미분류">
+			<em class="photo">사진 추가</em>
+		</div>
+		<dl class="hbox jc">
+			<dt class="char">고객 이름</dt>
+			<dd class="flex"><input type="text" data-clear-btn="true"></dd>
+		</dl>
+		<dl class="hbox jc">
+			<dt class="char">고객 분류</dt>
+			<dd class="flex">
+				<select name="" data-role="none">
+					<option value="">미분류</option>
+					<option value="">잠재 고객</option>
+					<option value="">가망 고객</option>
+					<option value="">유망 고객</option>
+					<option value="">신규 고객</option>
+					<option value="">재구매 고객</option>
+					<option value="">고객 전도사</option>
+					<option value="">비고객</option>
+				</select>
+			</dd>
+		</dl>
+		<dl class="hbox jc">
+			<dt class="char">생일</dt>
+			<dd class="flex"><input type="text" value="1990.01.07"></dd>
+		</dl>
+	</div>
+
+	<ul class="cus_con">
+		<li>
+			<h4>TA 설정</h4>
+			<dl class="hbox jc">
+				<dt class="char">TA 기준일</dt>
+				<dd class="flex"><input type="text" value="2013.01.07"></dd>
+				<dt class="char">주기</dt>
+				<dd class="w25">
+					<select name="" data-role="none">
+						<option value="">1개월</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<h4>전화번호</h4>
+			<button type="button" class="btn_add">추가</button>
+			<ul>
+				<li class="hbox jc">
+					<select name="" data-role="none" class="w25">
+						<option value="">휴대폰</option>
+					</select>
+					<div class="flex ml5"><input type="tel" data-clear-btn="true" value="01039309665"></div>
+					<button type="button" class="btn_del ml20">삭제</button>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<h4>주소</h4>
+			<button type="button" class="btn_add">추가</button>
+			<ul>
+				<li class="hbox jc">
+					<select name="" data-role="none" class="w25">
+						<option value="">집</option>
+						<option value="">회사</option>
+						<option value="">기타</option>
+					</select>
+					<div class="flex ml5"><input type="text" data-clear-btn="true"></div>
+					<button type="button" class="btn_del ml20">삭제</button>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<h4>이메일</h4>
+			<button type="button" class="btn_add">추가</button>
+			<ul>
+				<li class="hbox jc">
+					<select name="" data-role="none" class="w25">
+						<option value="">개인</option>
+						<option value="">회사</option>
+						<option value="">기타</option>
+					</select>
+					<div class="flex ml5"><input type="text" data-clear-btn="true"></div>
+					<button type="button" class="btn_del ml20">삭제</button>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup">
+		<div class="pop_cus">
+			<h6>고객 분류 선택</h6>
+			<ul>
+				<li>
+					<label for="cus1"><span>미분류</span><span>분류되지 않은 고객</span></label>
+					<input type="radio" name="cus" id="cus1" data-role="none">
+				</li>
+				<li>
+					<label for="cus2"><span>잠재 고객</span><span>FC의 존재를 파악하지 못한 고객</span></label>
+					<input type="radio" name="cus" id="cus2" data-role="none">
+				</li>
+				<li>
+					<label for="cus3"><span>가망 고객</span><span>소개받았거나, FC의 존재를 파악한 고객</span></label>
+					<input type="radio" name="cus" id="cus3" data-role="none">
+				</li>
+				<li>
+					<label for="cus4"><span>유망 고객</span><span>FF를 받은 고객</span></label>
+					<input type="radio" name="cus" id="cus4" data-role="none">
+				</li>
+				<li>
+					<label for="cus5"><span>신규 고객</span><span>보험으로 첫 계약을 한 고객</span></label>
+					<input type="radio" name="cus" id="cus5" data-role="none">
+				</li>
+				<li>
+					<label for="cus6"><span>재구매</span><span>고객 재구매를 한 고객</span></label>
+					<input type="radio" name="cus" id="cus6" data-role="none">
+				</li>
+				<li>
+					<label for="cus7"><span>고객 전도사</span><span>가망 고객을 소개해주는 고객</span></label>
+					<input type="radio" name="cus" id="cus7" data-role="none">
+				</li>
+				<li>
+					<label for="cus8"><span>비고객</span><span>고객화가 어려운 고객</span></label>
+					<input type="radio" name="cus" id="cus8" data-role="none">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

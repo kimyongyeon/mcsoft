@@ -1,0 +1,80 @@
+서버는 java 와 Spring 프레임웍, MyBatis 로 구성되었습니다.
+사용되는 프로토콜은 http 프로토콜을 사용했으며, 클라이언트와의 통신은 비동기 통신입니다.
+클라이언트가 서버와의 통신을 원할때(버튼클릭 등)만 통신을 시도하며 그 이외에는 서버와 연결을 유지하지는 않습니다.
+서버와 주고받는 데이터는 RequestBody 와 ResponseBody 에 json 스트링을 담아서 주고 받습니다.
+
+현 시점에서 서버가 구동이 되면 http://아이피:포트/MCSOFT_MOBILE 의 URL 을 사용하도록 되어있습니다.
+이 부분은 클라이언스 리소스인 common.js 의 connect_url 이 가지고 있습니다. (서버주소를 등록하시면 됩니다.)
+
+서버와의 통신시 인터페이스 아이디와 json 스트링을 반드시 사용해야합니다.
+Ex ) var http_str = common.http.doRequestString(param.TRCODE, JSON.stringify(param));
+
+인터페이스 아이디는 서버에서 처리할 하나의 비즈니스 로직입니다.
+Ex )
+	page.view.onClickPrivateLogin(function() {
+                // 서버와의 통신시도
+            	var param = {};
+                param.user_id = page.view.getPrivateLoginId();
+                param.user_pw = page.view.getPrivateLoginPw();
+                param.main_cd = "4";
+                param.user_section = "001";
+                param.TRCODE = "MCSOFT_SUCCESS_LOGIN";
+                
+             
+                /*var tmpJson = {};
+                tmpJson.user_id = "fox7601";
+				tmpJson.user_name = "엄진영";
+				pcs.html.localStorage.set("login_info", JSON.stringify(tmpJson));
+				pcs.html._is_login = true;
+				pcs.html.startActivity("../main/main_menu.html");*/
+                   
+                                                
+                var http_str = common.http.doRequestString(param.TRCODE, JSON.stringify(param));
+                var http_json = JSON.parse(http_str);
+                console.log(tag +"::::  response data - real : " + http_json);
+                
+                /**
+                 * 오브젝트 체크 및 기타 체크 시작 
+                 */               
+                if($.isPlainObject(http_json)) {
+                	if(http_json.result_status === "t") {
+                		// 서버에서 받은 데이터가 일단 정상
+                		var login_obj = http_json.result_data;
+                		
+                		if(login_obj != null) {
+	                		if(login_obj.user_id !== undefined && login_obj.user_id !== null && param.user_id === login_obj.user_id) {
+	                			//alert("로그인 처리중입니다....");
+	                			pcs.html.localStorage.set("login_info", JSON.stringify(login_obj));
+	                			//alert(pcs.html.localStorage.get("login_info", "user_id")+"님 안녕하세요. 메인페이지로 이동합니다.");
+	                			pcs.html._is_login = true;
+	                			pcs.html.startActivity("../main/main_menu.html");
+	                		} else {
+	                			alert("로그인에 실패하였습니다.");
+	                			return false;
+	                		}
+                		} else {
+                			alert("로그인에 실패하였습니다.");
+                    		return false;
+                		}
+                	} else {
+                		alert("로그인에 실패하였습니다.");
+                		return false;
+                	}
+                	
+                } else {
+                	alert("로그인에 실패하였습니다.");
+                	return false;
+                }                
+               
+            });
+
+위의 비즈니스 로직은 로그인을 처리하는 부분입니다.
+var param = {};
+                param.user_id = page.view.getPrivateLoginId();
+                param.user_pw = page.view.getPrivateLoginPw();
+                param.main_cd = "4";
+                param.user_section = "001";
+                param.TRCODE = "MCSOFT_SUCCESS_LOGIN";
+
+핵심부분입니다. 서버에 전달하는 데이터와 param.TRCODE = "MCSOFT_SUCCESS_LOGIN"; 로 명시된 인터페이스 아이디 입니다.
+서버는 해당 인터페이스 아이디를 전달받아 각각의 비즈니스 로직을 처리하도록 되어있습니다.

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" id= "head" class="header">
+	    <h1>위치 보기</h1>
+	    <button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_search">지도 검색</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div id="cont1" class="bar_date">
+		<div>
+			<h2>2013.11.29 (금)</h2>
+			<button type="button" class="btn_prev">이전</button>
+			<button type="button" class="btn_next">다음</button>
+		</div>
+		<button type="button" class="btn1">오늘</button>
+	</div>
+	<div id="map" class="map_area">
+		<div class="map_canvas"></div>
+		<p class="map_top">서울시 서초구 서초대로78길 42</p>
+		<button type="button" class="btn_now">현재 위치</button>
+		<button type="button" class="btn_all">전체 보기</button>
+		<button type="button" class="btn_txt">주변고객</button>
+	</div>
+	<div id="cont2" class="plan_con">
+		<!-- 고객 정보 표시 바 -->
+		<div class="plan_bar" style="display:block">
+			<div class="info1 sales2">
+				<span>AP</span>
+				<strong>홍길동고객</strong>
+				<img src="../img/ico_num2.png" alt="2">
+			</div>
+			<div class="info2">
+				<p>2013.12.11(수) 오전 10:30</p>
+				<button type="button" class="btn_send">문자보내기</button>
+				<button type="button" class="btn_call ml10">전화걸기</button>
+			</div>
+			<button type="button" class="btn_left">좌</button>
+			<button type="button" class="btn_right">우</button>
+		</div>
+		<!-- /고객 정보 표시 바 -->
+
+		<!-- 현재 위치 표시 바 -->
+		<div class="plan_bar2" style="display:none">
+			<div>
+				<img src="../img/ico_pin0.png" alt="핀아이콘">
+				<strong>현재 위치</strong>
+				<p>서울시 서초구 서초대로 73길 13</p>
+			</div>
+			<div>
+				<img src="../img/ico_pin1.png" alt="핀아이콘">
+				<strong>고객 위치</strong>
+				<p>서울시 서초구 서초대로 78길 42</p>
+			</div>
+			<button type="button" class="btn1">길 찾기</button>
+		</div>
+		<!-- /현재 위치 표시 바 -->
+
+		<!-- 주변 고객 표시 바 -->
+		<div class="plan_bar" style="display:none">
+			<div class="info1 sales2">
+				<span>AP</span>
+				<strong>홍길동고객</strong>
+				<img src="../img/ico_num2.png" alt="2">
+			</div>
+			<div class="info2">
+				<div>
+					<strong>주변 고객 :</strong>
+					<p>하연수 외 2명</p>
+				</div>
+				<button type="button" class="btn1">목록 보기</button>
+			</div>
+		</div>
+		<!-- /주변 고객 표시 바 -->
+
+		<!-- 선택 고객 표시 바 -->
+		<div class="plan_bar" style="display:none">
+			<div class="info1 sales2">
+				<span>AP</span>
+				<strong>홍길동고객</strong>
+				<img src="../img/ico_num2.png" alt="2">
+			</div>
+			<div class="info2">
+				<div>
+					<strong>거리 :</strong>
+					<p>5.05km</p>
+				</div>
+				<button type="button" class="btn1">Post-it</button>
+				<button type="button" class="btn_send">문자보내기</button>
+				<button type="button" class="btn_call ml10">전화걸기</button>
+			</div>
+			<button type="button" class="btn_left">좌</button>
+			<button type="button" class="btn_right">우</button>
+		</div>
+		<!-- /선택 고객 표시 바 -->
+	</div>
+	<!-- /content -->
+</div>
+
+<!-- popup -->
+<div class="popup" style="display:none">
+	<div class="pop_plan0">
+		<h6>하연수 고객의 Post-it<button type="button">닫기</button></h6>
+		<ul>
+			<li class="sales2"><span>2013.12.11</span><strong>안부 전화</strong></li>
+			<li><span>2013.11.13</span><strong>컨설팅 의뢰</strong></li>
+			<li><span>2013.11.07</span><strong>소개건으로 전화를...</strong></li>
+			<li><span>2013.10.10</span><strong>제목이나 내용...</strong></li>
+		</ul>
+	</div>
+</div>
+<!-- /popup -->
+
+<!-- popup -->
+<div class="popup" style="display:block">
+	<div class="pop_plan4">
+		<h6>Post-it<button type="button">닫기</button></h6>
+		<div class="memo memo1">
+			<span>2013.09.11 (수) 10:00</span>
+			<button type="button" class="btn_star">메모 중요도</button>
+			<em>고준희</em>
+			<p>고준희가 랩을 한다, 헝헝헝, 아라리요<br>내가 바로 아라리요. 어쩌구, 저쩌구</p>
+		</div>
+	</div>
+</div>
+<!-- /popup -->
+
+<!-- script -->
+<script>
+mapHeight();
+function mapHeight() {
+	var pageHeight = window.innerHeight; // 실제 화면 높이
+	var headHeight = $("#head").height();
+	var contHeight1 = $("#cont1").height();
+	var contHeight2 = $("#cont2").height();
+	var finalHeight = 0; // 최종적인 지도 영역 높이
+
+	finalHeight = pageHeight - headHeight - contHeight1 - contHeight2; // 해더, 제외영역 빼는
+	$("#map").height(finalHeight);
+}
+</script>
+
+</body>
+</html>

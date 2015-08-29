@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+    <!-- header -->
+    <div data-role="header" data-position="fixed" class="header">
+        <h1>금융자산</h1>
+        <button type="button" class="btn_reset">취소</button>
+        <button type="button" class="btn_submit">저장</button>
+    </div>
+    <!-- /header -->
+
+    <!-- content -->
+    <div class="mp_inp">
+        <h2 class="tit5">금융자산1</h2>
+        <button type="button" class="btn_del">삭제</button>
+        <div class="congrats"><span>축 만기! 수고하셨어요!</span></div>
+        <dl>
+            <dt>금융상품명</dt>
+            <dd class="w75"><input type="text"></dd>
+            <dt>금리(%)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>거치액OR<br>적립액(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>상품종류</dt>
+            <dd>
+                <span class="select">선택</span>
+            </dd>
+        </dl>
+        <dl>
+            <dt>기간</dt>
+            <dd class="hbox">
+                <div class="flex"><input type="tel" placeholder="시작일"></div>
+                <div class="flex ml7"><input type="tel" placeholder="만기일"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>현재액<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt class="nametag"><span>이름표</span></dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">이름표</option>
+                    <option value="">주택자금</option>
+                    <option value="">교육자금</option>
+                    <option value="">결혼자금</option>
+                    <option value="">노후자금</option>
+                    <option value="">이벤트</option>
+                    <option value="">부채상환</option>
+                </select>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="mp_inp">
+        <h2 class="tit5">금융자산2</h2>
+        <button type="button" class="btn_add">추가</button>
+        <dl>
+            <dt>금융상품명</dt>
+            <dd class="w75"><input type="text"></dd>
+            <dt>금리(%)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>거치액OR<br>적립액(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>상품종류</dt>
+            <dd>
+                <span class="select">선택</span>
+            </dd>
+        </dl>
+        <dl>
+            <dt>기간</dt>
+            <dd class="hbox">
+                <div class="flex"><input type="tel" placeholder="시작일"></div>
+                <div class="flex ml7"><input type="tel" placeholder="만기일"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>현재액<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt class="nametag"><span>이름표</span></dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">이름표</option>
+                    <option value="">주택자금</option>
+                    <option value="">교육자금</option>
+                    <option value="">결혼자금</option>
+                    <option value="">노후자금</option>
+                    <option value="">이벤트</option>
+                    <option value="">부채상환</option>
+                </select>
+            </dd>
+        </dl>
+    </div>
+
+    <!-- 안내문은 추가입력시 사라짐 -->
+    <p class="box_txt" style="display:none">금융자산을 추가할 때는 <button type="button" class="btn_add"></button> 를 클릭해주세요.<br>금융상품명은 10자 이내로 입력해주세요!</p>
+    <!-- /content -->
+
+    <!-- popup -->
+    <div class="popup" style="display:none;">
+        <div class="pop_assets1">
+            <h6 class="pop_tit">금융상품 종류선택</h6>
+
+            <div class="pop_chk1">
+                <strong>예적금</strong>
+                <ul>
+                    <li><label for="chk11">예금</label><input type="radio" data-role="none" name="chk1" id="chk11"></li>
+                    <li><label for="chk12">적금</label><input type="radio" data-role="none" name="chk1" id="chk12"></li>
+                </ul>
+            </div>
+
+            <div class="pop_chk1">
+                <strong>펀드</strong>
+                <ul>
+                    <li><label for="chk21">거치식</label><input type="radio" data-role="none" name="chk2" id="chk21"></li>
+                    <li><label for="chk22">적립식</label><input type="radio" data-role="none" name="chk2" id="chk22"></li>
+                </ul>
+            </div>
+            <ul class="pop_chk2">
+                <li><label for="chk211">주식형</label><input type="radio" data-role="none" name="chk21" id="chk211"></li>
+                <li><label for="chk212">주식혼합</label><input type="radio" data-role="none" name="chk21" id="chk212"></li>
+                <li><label for="chk213">채권혼합</label><input type="radio" data-role="none" name="chk21" id="chk213"></li>
+                <li><label for="chk214">채권형</label><input type="radio" data-role="none" name="chk21" id="chk214"></li>
+                <li><label for="chk215">MMF</label><input type="radio" data-role="none" name="chk21" id="chk215"></li>
+            </ul>
+
+            <div class="pop_chk1">
+                <strong>저축보험</strong>
+                <ul>
+                    <li><label for="chk31">일시납</label><input type="radio" data-role="none" name="chk3" id="chk31"></li>
+                    <li><label for="chk32">월납</label><input type="radio" data-role="none" name="chk3" id="chk32"></li>
+                </ul>
+            </div>
+            <ul class="pop_chk2">
+                <li><label for="chk311">주식형</label><input type="radio" data-role="none" name="chk31" id="chk311"></li>
+                <li><label for="chk312">주식혼합</label><input type="radio" data-role="none" name="chk31" id="chk312"></li>
+                <li><label for="chk313">채권혼합</label><input type="radio" data-role="none" name="chk31" id="chk313"></li>
+                <li><label for="chk314">채권형</label><input type="radio" data-role="none" name="chk31" id="chk314"></li>
+                <li><label for="chk315">MMF</label><input type="radio" data-role="none" name="chk31" id="chk315"></li>
+                <li><label for="chk316">정액보험</label><input type="radio" data-role="none" name="chk31" id="chk316"></li>
+            </ul>
+
+            <div class="pop_btn">
+                <button type="button">취소</button>
+                <button type="button">저장</button>
+            </div>
+        </div>
+    </div>
+    <!-- /popup -->
+</div>
+
+</body>
+</html>

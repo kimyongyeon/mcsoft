@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ApkInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select apk_seq, 
+		         apk_version,
+		         apk_org_file,
+		         apk_upload_file,
+		         title,
+		         use_yn,
+		         create_date
+		  from tb_apk
+		 order by apk_seq desc
+	</select>
+
+	<select id="getNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(apk_seq), 0)+1 nextcd
+		  from tb_apk
+	</select>
+	
+	<insert id="insertInfoApk" parameterType="java.util.HashMap">
+		insert into tb_apk (apk_seq, apk_version, apk_org_file, apk_upload_file, title, use_yn, create_date) 
+		values (#{apk_seq}, #{apk_version}, #{apk_org_file}, #{apk_upload_file}, #{title}, #{use_yn}, sysdate())		
+	</insert>
+	    
+	<update id="updateInfoApk" parameterType="java.util.HashMap">
+		update tb_apk set apk_version = #{apk_version},
+										   <if test="apk_org_file != null and apk_org_file != ''">
+												apk_org_file = #{apk_org_file},        
+										   </if>
+										   <if test="apk_upload_file != null and apk_upload_file != ''">
+												apk_upload_file = #{apk_upload_file},        
+										   </if>
+		                                   title = #{title},
+		                                   use_yn = #{use_yn}
+          where apk_seq = #{apk_seq}
+	</update>
+	
+	<update id="deleteInfoApk" parameterType="java.util.HashMap">
+		delete from tb_apk
+          where apk_seq = #{apk_seq}
+	</update>
+	
+	<update id="updateApkAll" parameterType="java.util.HashMap">
+		update tb_apk set use_yn=#{not_use_yn}
+		 where apk_seq != #{apk_seq}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select apk_seq, 
+		         apk_version,
+		         apk_org_file,
+		         apk_upload_file,
+		         title,
+		         use_yn,
+		         create_date
+		  from tb_apk
+		where apk_seq = #{apk_seq}
+	</select>
+	
+</mapper>

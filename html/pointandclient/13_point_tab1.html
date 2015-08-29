@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>포인트 및 고객</h1>
+	    <button type="button" class="btn_home">홈</button>
+	    <button type="button" class="btn_list">대화목록</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab_point">
+		<li class="active"><button type="button">포인트 및 고객 정보</button></li>
+		<li><button type="button">황금노트 고객</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- bar -->
+	<div class="bar_point fixed">
+		<em>김연하<span>미래애셋</span></em>
+		<strong>320<span>(+80)</span></strong>
+	</div>
+	<!-- /bar -->
+
+	<!-- content -->
+	<div class="point1">
+		<h3 class="tit_point">포인트 정보</h3>
+		<ul class="bul_list">
+			<li><span>구매 포인트</span><span>1000</span></li> 
+			<li><span>선물 포인트</span><span>300</span></li>
+			<li><span>획득 포인트</span><span>300</span></li>
+			<li><span>이번주 획득</span><span>70</span></li>
+			<li><span>사용 포인트</span><span>1300</span></li>
+			<li><span>이번주 지출</span><span>500</span></li>
+			<li><span>결제 포인트</span><span>1000</span></li>
+			<li><span>이번주 선물</span><span>500</span></li>
+		</ul>
+		<h3 class="tit_point">황금노트 고객 정보</h3>
+		<ul class="bul_list">
+			<li><span>황금노트 선물</span><span>9명</span></li> 
+			<li><span>선물하기</span><span>11회</span></li>
+			<li><span>담당 FC 지정</span><span>3명</span></li>
+			<li><span>응원하기</span><span>15회</span></li>
+			<li><span>재무진단 요청</span><span>5명</span></li>
+			<li><span>응원받기</span><span>12회</span></li>
+			<li><span>포인트 요청</span><span>4명</span></li>
+		</ul>
+	</div>
+	<!-- /content -->
+
+	<!-- footer -->
+	<div data-role="footer" data-position="fixed" class="btn_box">
+		<button type="button" class="btn2">포인트 구매</button>
+		<button type="button" class="btn1">포인트 무료 충전</button>
+	</div>
+	<!-- /footer -->
+
+	<!-- popup -->
+	<div class="bg_pop" style="display:none">
+		<div class="pop_func pop_point">
+			<button type="button"></button>
+			<ul>
+				<li>대화 하기</li>
+				<li>포인트 선물</li>
+				<li>포인트 구매</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

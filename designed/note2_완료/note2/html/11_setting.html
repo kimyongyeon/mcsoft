@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" class="header">
+	    <h1>설정</h1>
+	    <button type="button" class="btn_home">홈</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div class="setting">
+		<h2>로그인</h2>
+		<ul>
+			<li>
+				<strong class="tit_set">이름</strong>
+				<div><input type="text" value="홍길동" readonly /></div>
+			</li>
+			<li>
+				<strong class="tit_set">아이디</strong>
+				<div><input type="text" value="9comets@gmail.com" readonly /></div>
+			</li>
+			<li>
+				<strong class="tit_set">비밀번호</strong>
+				<div class="show_pw">
+					<!-- 버튼명(보이기) : type="password", 버튼명(감추기) : type="text" -->
+					<input type="password" value="abcd1234" readonly />
+					<button type="button">보이기</button>
+				</div>
+			</li>
+			<li>
+				<strong>자동 로그인 설정</strong>
+				<div><input type="checkbox" data-role="none" class="toggle" /></div>
+			</li>
+		</ul>
+
+		<h2>잠금 설정</h2>
+		<ul>
+			<li>
+				<strong>암호 잠금</strong>
+				<div><input type="checkbox" data-role="none" class="toggle" checked /></div>
+			</li>
+		</ul>
+		
+		<h2>기능 설정</h2>
+		<ul>
+			<li>
+				<strong>알림 서비스 받기</strong>
+				<div><input type="checkbox" data-role="none" class="toggle" /></div>
+			</li>
+			<li>
+				<strong>SMS 인식 기능 사용</strong>
+				<div><input type="checkbox" data-role="none" class="toggle" /></div>
+			</li>
+			<li>
+				<button type="button" class="btn_set">데이터 초기화</button>
+			</li>
+		</ul>
+		
+		<h2>기타</h2>
+		<ul>
+			<li><button type="button" class="btn_set">공지사항</button></li>
+		</ul>
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

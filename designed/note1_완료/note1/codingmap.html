@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<title>Page Title</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+img, fieldset{border:0 none;}
+body, h2, h3, h4, h5, dl, dt, dd, th, td, div, p, form, fieldset, select, legend, input, label, textarea{font-size:11px;font-family:'돋움',dotum;color:#333;}
+ul, ol, li{list-style:none outside;}
+table, th, td{margin:0;padding:5px;border:1px solid #ccc;;border-spacing:0;border-collapse:collapse;}
+
+body{padding:10px;}
+h1{font-size:18px;text-align:center;}
+table{width:100%;margin-top:10px;}
+thead th{color:#fff;background-color:#000;}
+tbody th{font-size:12px;color:#fff;background-color:#555;}
+tbody tr.bg01{background-color:#dfffff;}
+tbody tr.coding{background-color:#ffffc8;}
+tbody tr.no{background-color:#dcdcdc;}
+
+td a{color:blue;text-decoration:underline;}
+td p{line-height:1.6;}
+th p{color:red;line-height:1.6;font-weight:normal;text-align:right;}
+
+</style>
+</head>
+<body>
+
+<h1>성공노트 코딩가이드</h1>
+
+<table class="table1" summary="HTML 페이지명과 현황" style="width:100%;">
+	<colgroup>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col style="width:150px" />
+        <col style="width:80px" />
+	</colgroup>
+	<thead>
+        <tr>
+            <th>MAIN</th>
+            <th>1Depth</th>
+            <th>2Depth</th>
+            <th>3Depth</th>
+            <th>화면ID/디자인ID/파일명</th>
+            <th>완료날짜</th>
+            <th>비고</th>
+        </tr>
+	</thead>
+	<tbody>
+<!-- ========== 로그인 ============================== -->
+        <tr>
+            <th colspan="7">로그인</th>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/02_login.html"  target="_blank">02_login.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td>회원가입</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/02_join.html"  target="_blank">02_join.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td>회원가입</td>
+            <td>이용약관</td>
+            <td></td>
+            <td><a href="html/02_agree.html"  target="_blank">02_agree.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td>회원가입</td>
+            <td>가입확인</td>
+            <td></td>
+            <td><a href="html/02_join_ok.html"  target="_blank">02_join_ok.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td>비밀번호찾기</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/02_pwsearch_fix.html"  target="_blank">02_pwsearch.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그인</td>
+            <td>비밀번호찾기</td>
+            <td>비밀번호재설정</td>
+            <td></td>
+            <td><a href="html/02_pwsearch_fix.html"  target="_blank">02_pwsearch_fix.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+<!-- ============================== 메인 ==============================  -->
+        <tr>
+            <th colspan="7">메인</th>
+        </tr>
+        <tr>
+            <td>메인</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/03_main.html"  target="_blank">03_main.html</a></td>
+            <td>2014.04.28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>메인</td>
+            <td>전체메뉴</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/03_fullmenu.html" target="_blank">03_fullmenu.html</a></td>
+            <td>2014.06.22</td>
+            <td></td>
+        </tr>
+<!-- ============================== 고객카드 ==============================  -->
+        <tr>
+            <th colspan="7">고객카드</th>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/04_cus_list.html" target="_blank">04_cus_list.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>입력화면</td>
+            <td>기본정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_inp_tab1.html" target="_blank">04_cus_inp_tab1.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>입력화면</td>
+            <td>상세정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_inp_tab2.html" target="_blank">04_cus_inp_tab2.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>입력화면</td>
+            <td>재무설계탭</td>
+            <td></td>
+            <td><a href="html/04_cus_inp_tab3.html" target="_blank">04_cus_inp_tab3.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>입력화면</td>
+            <td>계약정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_inp_tab4.html" target="_blank">04_cus_inp_tab4.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>출력화면</td>
+            <td>기본정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_out_tab1.html" target="_blank">04_cus_out_tab1.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>출력화면</td>
+            <td>상세정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_out_tab2.html" target="_blank">04_cus_out_tab2.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>출력화면</td>
+            <td>재무설계탭</td>
+            <td></td>
+            <td><a href="html/04_cus_out_tab3.html" target="_blank">04_cus_out_tab3.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>출력화면</td>
+            <td>계약정보탭</td>
+            <td></td>
+            <td><a href="html/04_cus_out_tab4.html" target="_blank">04_cus_out_tab4.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>고객카드</td>
+            <td>출력화면</td>
+            <td>프로세스탭</td>
+            <td></td>
+            <td><a href="html/04_cus_out_tab5.html" target="_blank">04_cus_out_tab5.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+<!-- ============================== TA List ==============================  -->
+        <tr>
+            <th colspan="7">TA List</th>
+        </tr>
+        <tr>
+            <td>TA List</td>
+            <td>추천고객목록 탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/05_talist_tab1.html" target="_blank">05_talist_tab1.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TA List</td>
+            <td>추천고객목록 탭</td>
+            <td>빈 페이지</td>
+            <td></td>
+            <td><a href="html/05_talist_tab1_blank.html" target="_blank">05_talist_tab1_blank.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TA List</td>
+            <td>등록고객목록 탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/05_talist_tab2.html" target="_blank">05_talist_tab2.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TA List</td>
+            <td>Hot List 탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/05_talist_tab3.html" target="_blank">05_talist_tab3.html</a></td>
+            <td>2014.05.02</td>
+            <td></td>
+        </tr>
+<!-- ============================== Post it ==============================  -->
+        <tr>
+            <th colspan="7">Post it</th>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_postit.html" target="_blank">06_postit.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_postit_default.html" target="_blank">06_postit_default.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td>등록고객목록 탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_memo.html" target="_blank">06_memo.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td>메모편집</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_memo_edit.html" target="_blank">06_memo_edit.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td>새로운메모</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_memo_new.html" target="_blank">06_memo_new.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Post it</td>
+            <td>통화후메모등록</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/06_memo_new2.html" target="_blank">06_memo_new2.html</a></td>
+            <td>2014.06.07</td>
+            <td></td>
+        </tr>
+<!-- ============================== Sit Plan ==============================  -->
+        <tr>
+            <th colspan="7">Sit Plan</th>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/07_sitplan.html" target="_blank">07_sitplan.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정목록</td>
+            <td>고객일정목록탭</td>
+            <td></td>
+            <td><a href="html/07_sitplan_list1.html" target="_blank">07_sitplan_list1.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정목록</td>
+            <td>개인일정목록탭</td>
+            <td></td>
+            <td><a href="html/07_sitplan_list2.html" target="_blank">07_sitplan_list2.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정목록</td>
+            <td>재시도목록탭</td>
+            <td></td>
+            <td><a href="html/07_sitplan_list3.html" target="_blank">07_sitplan_list3.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정보기</td>
+            <td>고객일정</td>
+            <td></td>
+            <td><a href="html/07_sitplan_view1.html" target="_blank">07_sitplan_view1.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정보기</td>
+            <td>개인일정</td>
+            <td></td>
+            <td><a href="html/07_sitplan_view2.html" target="_blank">07_sitplan_view2.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정보기</td>
+            <td>재시도일정</td>
+            <td></td>
+            <td><a href="html/07_sitplan_view3.html" target="_blank">07_sitplan_view3.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정등록</td>
+            <td>고객일정탭</td>
+            <td></td>
+            <td><a href="html/07_sitplan_add1.html" target="_blank">07_sitplan_add1.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정등록</td>
+            <td>개인일정탭</td>
+            <td></td>
+            <td><a href="html/07_sitplan_add2.html" target="_blank">07_sitplan_add2.html</a></td>
+            <td>2014.05.25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sit Plan</td>
+            <td>일정등록</td>
+            <td>고객일정탭</td>
+            <td>위치보기</td>
+            <td><a href="html/07_sitplan_map.html" target="_blank">07_sitplan_map.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+<!-- ============================== 동선관리 ==============================  -->
+        <tr>
+            <th colspan="7">동선관리</th>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="html/08_line.html" target="_blank">08_line.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>동선관리팝업</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/08_line_pop.html" target="_blank">08_line_pop.html</a></td>
+            <td>2014.06.22</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>동선보기</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/08_line_view.html" target="_blank">08_line_view.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>지도검색</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/08_search.html" target="_blank">08_search.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>지도검색</td>
+            <td>검색위치보기</td>
+            <td></td>
+            <td><a href="html/08_search_view.html" target="_blank">08_search_view.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>지도검색</td>
+            <td>길찾기</td>
+            <td></td>
+            <td><a href="html/08_search_road.html" target="_blank">08_search_road.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>동선관리</td>
+            <td>지도검색</td>
+            <td>길찾기</td>
+            <td>경로보기</td>
+            <td><a href="html/08_search_roadview.html" target="_blank">08_search_roadview.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+<!-- ============================== CRM ==============================  -->
+        <tr>
+            <th colspan="7">CRM</th>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>고객찾기탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/09_crm_tab1.html" target="_blank">09_crm_tab1.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>고객찾기탭</td>
+            <td>상세검색목록</td>
+            <td></td>
+            <td><a href="html/09_crm_tab1_view.html" target="_blank">09_crm_tab1_view.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/09_crm_tab2.html" target="_blank">09_crm_tab2.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td>카테고리</td>
+            <td></td>
+            <td><a href="html/09_crm_tab2_cate.html" target="_blank">09_crm_tab2_cate.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td>선물상세보기</td>
+            <td></td>
+            <td><a href="html/09_crm_tab2_view.html" target="_blank">09_crm_tab2_view.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td>선물함</td>
+            <td></td>
+            <td><a href="html/09_crm_tab2_gift.html" target="_blank">09_crm_tab2_gift.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td>선물함</td>
+            <td>내구매목록</td>
+            <td><a href="html/09_crm_tab2_gift2.html" target="_blank">09_crm_tab2_gift2.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>선물가게탭</td>
+            <td>선물함</td>
+            <td>보낸선물함</td>
+            <td><a href="html/09_crm_tab2_gift3.html" target="_blank">09_crm_tab2_gift3.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/09_crm_tab3.html" target="_blank">09_crm_tab3.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td>카테고리</td>
+            <td></td>
+            <td><a href="html/09_crm_tab3_cate.html" target="_blank">09_crm_tab3_cate.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td>자료상세보기</td>
+            <td></td>
+            <td><a href="html/09_crm_tab3_view.html" target="_blank">09_crm_tab3_view.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td>자료함</td>
+            <td></td>
+            <td><a href="html/09_crm_tab3_file.html" target="_blank">09_crm_tab3_file.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td>자료함</td>
+            <td>스크랩</td>
+            <td><a href="html/09_crm_tab3_file2.html" target="_blank">09_crm_tab3_file2.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>자료실탭</td>
+            <td>자료함</td>
+            <td>보낸자료함</td>
+            <td><a href="html/09_crm_tab3_file3.html" target="_blank">09_crm_tab3_file3.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CRM</td>
+            <td>고객분석탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/09_crm_tab4.html" target="_blank">09_crm_tab4.html</a></td>
+            <td>2014.05.09</td>
+            <td></td>
+        </tr>
+<!-- ============================== 성과분석 ==============================  -->
+        <tr>
+            <th colspan="7">성과분석</th>
+        </tr>
+        <tr>
+            <td>성과분석</td>
+            <td>비전설정탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/10_analysis_tab1.html" target="_blank">10_analysis_tab1.html</a></td>
+            <td>2014.06.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>성과분석</td>
+            <td>연간계획탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/10_analysis_tab2.html" target="_blank">10_analysis_tab2.html</a></td>
+            <td>2014.06.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>성과분석</td>
+            <td>월간분석탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/10_analysis_tab3.html" target="_blank">10_analysis_tab3.html</a></td>
+            <td>2014.06.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>성과분석</td>
+            <td>주간분석탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/10_analysis_tab4.html" target="_blank">10_analysis_tab4.html</a></td>
+            <td>2014.06.09</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>성과분석</td>
+            <td>월간/주간분석탭</td>
+            <td>보고하기</td>
+            <td></td>
+            <td><a href="html/10_analysis_report.html" target="_blank">10_analysis_report.html</a></td>
+            <td>2014.06.09</td>
+            <td></td>
+        </tr>
+<!-- ============================== 랭킹 ==============================  -->
+        <tr>
+            <th colspan="7">랭킹</th>
+        </tr>
+        <tr>
+            <td>랭킹</td>
+            <td>전체순위탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/12_ranking_tab1.html" target="_blank">12_ranking_tab1.html</a></td>
+            <td>2014.05.31</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>랭킹</td>
+            <td>내보험회사순위탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/12_ranking_tab2.html" target="_blank">12_ranking_tab2.html</a></td>
+            <td>2014.05.31</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>랭킹</td>
+            <td>보험회사동료목록</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/12_ranking_list1.html" target="_blank">12_ranking_list1.html</a></td>
+            <td>2014.05.31</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>랭킹</td>
+            <td>보험회사동료목록</td>
+            <td>응원목록</td>
+            <td></td>
+            <td><a href="html/12_ranking_list2.html" target="_blank">12_ranking_list2.html</a></td>
+            <td>2014.05.31</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>랭킹</td>
+            <td>보험회사동료목록</td>
+            <td>응원목록없음</td>
+            <td></td>
+            <td><a href="html/12_ranking_default.html" target="_blank">12_ranking_default.html</a></td>
+            <td>2014.05.31</td>
+            <td></td>
+        </tr>
+<!-- ============================== 랭킹 ==============================  -->
+        <tr>
+            <th colspan="7">포인트</th>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>포인트및고객정보탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/13_point_tab1.html" target="_blank">13_point_tab1.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>황금노트고객탭</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/13_point_tab2.html" target="_blank">13_point_tab2.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>탭</td>
+            <td>대화하기</td>
+            <td></td>
+            <td><a href="html/13_point_tab_talk.html" target="_blank">13_point_tab_talk.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>탭</td>
+            <td>포인트선물</td>
+            <td></td>
+            <td><a href="html/13_point_tab_gift.html" target="_blank">13_point_tab_gift.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>탭</td>
+            <td>포인트구매</td>
+            <td></td>
+            <td><a href="html/13_point_tab_buy.html" target="_blank">13_point_tab_buy.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>탭</td>
+            <td>포인트무료충전</td>
+            <td></td>
+            <td><a href="html/13_point_tab_free.html" target="_blank">13_point_tab_free.html</a></td>
+            <td>2014.06.15</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>황금노트고객탭(디폴트)</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/13_point_default.html" target="_blank">13_point_default.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>대화목록</td>
+            <td></td>
+            <td></td>
+            <td><a href="html/13_point_list.html" target="_blank">13_point_list.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>대화목록</td>
+            <td>대화내용</td>
+            <td></td>
+            <td><a href="html/13_point_talk.html" target="_blank">13_point_talk.html</a></td>
+            <td>2014.06.15</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>대화목록</td>
+            <td>대화내용</td>
+            <td></td>
+            <td><a href="html/13_point_edit.html" target="_blank">13_point_edit.html</a></td>
+            <td>2014.06.07</td>
+            <td>클래스수정</td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>대화목록</td>
+            <td>임시보관함</td>
+            <td></td>
+            <td><a href="html/13_point_drafts.html" target="_blank">13_point_drafts.html</a></td>
+            <td>2014.06.02</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트</td>
+            <td>대화목록</td>
+            <td>팝업</td>
+            <td></td>
+            <td><a href="html/13_point_pop.html" target="_blank">13_point_pop.html</a></td>
+            <td>2014.06.22</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

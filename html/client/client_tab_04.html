@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../../lib/js/header.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div data-role="page" id="client_tab_04_page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>고객 등록</h1>
+	    <button type="button" class="_info_exit btn_reset">취소</button>
+	    <button type="button" class="_info_save btn_submit">저장</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab5">		
+		<li><button type="button" class="_client_info_base">기본 정보</button></li>
+		<li ><button type="button" class="_client_info_detail">상세 정보</button></li>
+		<li ><button type="button" class="_client_info_income">재무 설계</button></li>
+		<li class="active"><button type="button" class="_client_info_contract">계약 정보</button></li>
+		<li><button type="button">프로세스</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="cus_wrap">
+		<h3 class="cus_tit">보험 계약 정보</h3>
+		<button type="button" class="_contract_add btn_add">추가</button>
+		<ul class="_client_contract_list cus_btn">				
+		</ul>
+		
+		<ul class="mcsoft-template" id="_client_contract_add_templet">
+			<li class="_new_list_contract_item">
+				<div class="hbox">
+					<div class="flex"><input type="text" data-clear-btn="true" placeholder="상품명" class="_contract_title"></div>
+					<div class="flex ml5"><input type="text" data-clear-btn="true" placeholder="보험사" class="_contract_insurance"></div>
+				</div>
+				<div class="hbox mt5">
+					<div class="flex"><input type="text" data-clear-btn="true" placeholder="계약자" class="_contract_user"></div>
+					<div class="flex ml5"><input type="text" data-clear-btn="true" placeholder="보험 대상자" class="_contract_target_user"></div>
+				</div>
+				<div class="hbox mt5">
+					<div class="flex"><input type="text" placeholder="계약일" value="" class="_contract_dt"></div>
+					<div class="flex ml5"><input type="text" placeholder="자동 이체일" value="" class="_contract_auto_dt"></div>
+				</div>
+				<div class="hbox mt5">
+					<div class="flex"><input type="text" data-clear-btn="true" placeholder="증권 번호" value="" class="_contract_certificate_num"></div>
+					<div class="flex ml5"><input type="tel" data-clear-btn="true" placeholder="보험료" value="" class="_contract_mount"></div>
+				</div>
+				<textarea rows="5" data-role="none" placeholder="보장 내용" class="_contract_conts mt5"></textarea>
+				<button type="button" class="_contract_del btn_del">삭제</button>
+			</li>
+		</ul>
+	</div>
+	<!-- /content -->
+	<script src="app_js/client_tab_04.js"></script>
+</div>
+
+</body>
+</html>

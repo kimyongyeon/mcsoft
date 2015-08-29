@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smessage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script src="../../lib/js/NoScriptHeader.js" type="text/javascript"></script>      
+	<script type="text/javascript">
+	
+		function callCalling(phonenum){
+			window.JSInterface.callCalling(phonenum);
+		}
+
+		function callAppFinish(){			
+			window.JSInterface.callAppFinish();
+		}
+		
+		function callNewsflashList() {
+			var jString = window.JSInterface.callNewsflashList();
+			var json = JSON.parse(jString);
+			
+			NewsFlash.ACNT_LOC.value = json.INFO_ENVIROMENT.ACNT_LOC;        // 발생장소
+			NewsFlash.ACNT_GRADE.value = json.INFO_ENVIROMENT.ACNT_GRADE;    // 사고등급
+			NewsFlash.OCUR_DTTM.value = json.INFO_ENVIROMENT.OCUR_DTTM;      // 발생시간
+			//printTime();
+			NewsFlash.ACNT_GUBUN.value = json.INFO_ENVIROMENT.ACNT_GUBUN;    // 사고구분
+			NewsFlash.FRHS_RPT_YN.value = json.INFO_ENVIROMENT.FRHS_RPT_YN;  // 신고여부
+
+			
+			NewsFlash.ACNT_CONTENTS.value = json.INFO_NEWSFLASH.ACNT_CONTENTS; // 사고내용
+			NewsFlash.ACNT_TTL.value = json.INFO_NEWSFLASH.ACNT_TTL;           // 사고명
+
+			NewsFlash.WR_USER_NM.value = json.INFO_SENDER.WR_USER_NM;          // 작성자
+			NewsFlash.WR_PHONE_NO.value = json.INFO_SENDER.WR_PHONE_NO;        // 전화번호
+			NewsFlash.WR_DEPT_NM.value = json.INFO_SENDER.WR_DEPT_NM;          // 작성부서
+
+		}
+
+		function printTime() {
+			//var clock = document.getElementById("Time");            // 출력할 장소 선택
+			var now = new Date();                                                  // 현재시간
+			var nowTime = now.getFullYear() + "년" + (now.getMonth()+1) + "월" + now.getDate() + "일" + now.getHours() + "시" + now.getMinutes() + "분" + now.getSeconds() + "초";
+
+		   // clock.innerHTML = nowTime;           // 현재시간을 출력
+		   // setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+			NewsFlash.OCUR_DTTM.value = nowTime;
+		}
+
+	</script>
+
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header header_login">	
+	    <h3>속보내용을 확인한 후 확인버튼을 누르면 앱이 종료됩니다.</h3>
+	</div>
+	<!-- /header -->
+
+
+	<!-- content -->
+	<div class="cus_inp">
+		<h3 class="cus_tit"><b>속보개요</b></h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:auto">
+				<col style="width:23.4%">
+				<col style="width:auto">
+			</colgroup>						
+			<tr>
+				<th scope="row">사고구분</td>
+				<td>인적사고</td> 
+				<th scope="row">사고등급</td>
+				<td>D등급</td> 
+			</tr>			
+			<tr>
+				<th scope="row">발생시간</td>
+				<td colspan="3">2014년 4월 30일 오전 10시 30분</td> 
+			</tr>
+			<tr>
+				<th scope="row">발생장소</td>
+				<td colspan="3">천안캠퍼스</td> 
+			</tr>
+			<tr>
+				<th scope="row">신고여부</td>
+				<td colspan="3">미신고</td> 
+			</tr>
+		</table>
+		<h3 class="cus_tit"><b>속보내용</b></h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:auto">
+				<col style="width:23.4%">
+				<col style="width:auto">
+			</colgroup>						
+			<tr>
+				<th scope="row">사고명</td>
+				<td colspan="3">사고명입니다.</td> 
+			</tr>
+			<tr>				
+				<td colspan="4">
+					<div  class="agree_terms_temp">안녕하세요 사고내용입니다.
+안녕하세요 사고내용입니다. 
+이곳에는 사고내용이 들어갑니다. 확인하세요. 
+					</div>
+				</td> 
+			</tr>
+		</table>
+		<h3 class="cus_tit"><b>속보 접수자 정보</b></h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:auto">
+				<col style="width:23.4%">
+				<col style="width:auto">
+			</colgroup>		
+			<tr>
+				<th scope="row">작성자</td>
+				<td>엄진영</td> 
+				<th scope="row">작성부서</td>
+				<td>모바일개발</td> 
+			</tr>	
+			<tr>
+				<th scope="row"><button type="button" class="btn_call" onClick="javascript:callCalling('010-8431-7288');"></button></td>
+				<td colspan="3">010-8431-7288</td> 
+			</tr>	
+			
+			<tr>
+				<th scope="row">현장<br/>담당자</td>
+				<td>엄진영</td> 
+				<th scope="row">부서</td>
+				<td>모바일개발</td> 
+			</tr>	
+			<tr>
+				<th scope="row"><button type="button" class="btn_call" onClick="javascript:callCalling('010-8431-7288');"></button></td>
+				<td colspan="3">010-8431-7288</td> 
+			</tr>
+
+
+			<tr>
+				<th scope="row">현장<br/>관리자</td>
+				<td>엄진영</td> 
+				<th scope="row">부서</td>
+				<td>모바일개발</td> 
+			</tr>	
+			<tr>
+				<th scope="row"><button type="button" class="btn_call" onClick="javascript:callCalling('010-8431-7288');"></button></td>
+				<td colspan="3">010-8431-7288</td> 
+			</tr>
+		</table>
+		<br/>
+		<button type="button" class="btn1" onClick="javascript:callAppFinish();">확인 [속보내용 확인완료]</button>
+		<div style="height:30px">&nbsp;</div>
+	</div>
+	
+	<!-- /content -->
+
+</body>
+</html>

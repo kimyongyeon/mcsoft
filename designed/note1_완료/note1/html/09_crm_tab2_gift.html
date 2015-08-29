@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+		<div style="display:none">
+		    <h1>선물함</h1>
+	    	<button type="button" class="btn_back">이전</button>
+		    <button type="button" class="btn_submit">삭제</button>
+		</div>
+		<!-- 선물함 목록 삭제 -->
+		<div style="display:block">
+		    <h1>선물함 목록 삭제</h1>
+	    	<button type="button" class="btn_reset">취소</button>
+		    <button type="button" class="btn_submit">삭제</button>
+		</div>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs2 tab2_crm">
+		<li><button type="button">내 구매 목록</button></li>
+		<li class="active"><button type="button">보낸 선물함</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- 내 구매 목록 -->
+	<div data-role="collapsibleset" style="display:none">
+		<!-- <div data-role="collapsible" data-collapsed="false"> -->
+		<!-- 선물함 목록 삭제 -->
+		<div>
+			<!-- <h3 class="crm_tit">2013.12.09 (월)<em>2</em></h3> -->
+			<!-- 선물함 목록 삭제 -->
+			<div class="crm_tit">
+				<input type="checkbox" data-role="none" id="chkAll1">
+				<label for="chkAll1">2013.12.09 (월)<em>0</em></label>
+			</div>
+			<ul class="crm_list">
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>데일 카네기의 자기 관리론</strong>
+					<p><em>3,000원</em><span>도서</span></p>
+					<!-- 선물함 목록 삭제 -->
+					<input type="checkbox" data-role="none" id="">
+				</li>
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>[벨킨] 아이폰용 충전 싱크독</strong>
+					<p><em>3,000원</em><span>액세서리</span></p>
+					<!-- 선물함 목록 삭제 -->
+					<input type="checkbox" data-role="none" id="">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /내 구매 목록 -->
+
+	<!-- 보낸 선물함 -->
+	<div data-role="collapsibleset" style="display:block">
+		<!-- <div data-role="collapsible" data-collapsed="false"> -->
+		<!-- 선물함 목록 삭제 -->
+		<div>
+			<!-- <h3 class="crm_tit">2013.12.09 (월)<em>2</em></h3> -->
+			<!-- 선물함 목록 삭제 -->
+			<div class="crm_tit">
+				<input type="checkbox" data-role="none" id="chkAll2">
+				<label for="chkAll2">2013.12.09 (월)<em>0</em></label>
+			</div>
+			<ul class="crm_list">
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>성공노트</strong>
+					<p><em class="crm_txt">김연아 외 10명</em><span>앱</span></p>
+					<!-- 선물함 목록 삭제 -->
+					<input type="checkbox" data-role="none" id="">
+				</li>
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>데일 카네기의 자기 관리론</strong>
+					<p><em class="crm_txt">하연수 외 1명</em><span>도서</span></p>
+					<!-- 선물함 목록 삭제 -->
+					<input type="checkbox" data-role="none" id="">
+				</li>
+			</ul>
+		</div>
+
+		<!-- <div data-role="collapsible"> -->
+		<!-- 선물함 목록 삭제 -->
+		<div>
+			<!-- <h3 class="crm_tit">2013.11.15 (금)<em>1</em></h3> -->
+			<!-- 선물함 목록 삭제 -->
+			<div class="crm_tit">
+				<input type="checkbox" data-role="none" id="chkAll3">
+				<label for="chkAll3">2013.11.15 (금)<em>0</em></label>
+			</div>
+			<ul class="crm_list">
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>[벨킨] 아이폰용 충전 싱크독</strong>
+					<p><em class="crm_txt">고준희</em><span>액세서리</span></p>
+					<!-- 선물함 목록 삭제 -->
+					<input type="checkbox" data-role="none" id="">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /보낸 선물함 -->
+</div>
+
+</body>
+</html>

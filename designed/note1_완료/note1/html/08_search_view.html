@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" id= "head" class="header">
+	    <h1>검색 위치 보기</h1>
+	    <button type="button" class="btn_back">이전</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div id="map" class="map_area">
+		<div class="map_canvas"></div>
+		<p class="map_top">서울시 서초구 서초대로78길 42</p>
+		<button type="button" class="btn_now">현재 위치</button>
+	</div>
+	<div id="cont" class="line_bar2">
+		<div class="line_view1">
+			<img src="../img/ico_pin0.png" alt="핀아이콘">
+			<p><span>서울 서초구 서초대로 78길 42</span></p>
+			<div class="hbox jc">
+				<button type="button" class="flex">출발</button>
+				<button type="button" class="flex">도착</button>
+				<button type="button" class="flex">검색목록</button>
+				<button type="button" class="flex">동선보기</button>
+			</div>
+		</div>
+	</div>
+	<!-- /content -->
+</div>
+
+<!-- script -->
+<script>
+mapHeight();
+function mapHeight() {
+	var pageHeight = window.innerHeight; // 실제 화면 높이
+	var headHeight = $("#head").height();
+	var contHeight = $("#cont").height();
+	var finalHeight = 0; // 최종적인 지도 영역 높이
+
+	finalHeight = pageHeight - headHeight - contHeight; // 해더, 제외영역 빼는
+	$("#map").height(finalHeight);
+}
+</script>
+
+</body>
+</html>

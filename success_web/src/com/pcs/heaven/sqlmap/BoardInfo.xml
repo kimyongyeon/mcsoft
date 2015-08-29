@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		  select manage_seq,
+					board_seq,	
+					board_title,
+					board_conts,
+					board_use_yn,
+					board_view_count,
+					board_writer,
+					board_wdate
+		     from tb_board
+		   where manage_seq = #{manage_seq}
+		   <if test="@com.pcs.heaven.Common.util.MyBatisUtil@isNotEmpty(search_word)">
+	       		<choose>
+	           	    <when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('0', search_type)">
+	           	        and (board_title like concat(#{search_word}, '%') or board_conts  like concat(#{search_word}, '%'))
+	           	    </when>
+	           		<when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('1', search_type)">
+				    	and board_title  like concat(#{search_word}, '%')
+					</when>
+					<when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('2', search_type)">
+					    and board_conts  like concat(#{search_word}, '%')
+					</when>        
+					<otherwise></otherwise>
+	           	</choose>
+		   </if>
+		    order by board_seq desc
+		     limit #{start_num}, #{page_row} 
+	</select>
+	
+	<select id="getCount" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		 select count(*) cnt
+		   from tb_board
+		 where manage_seq = #{manage_seq}
+		 	<if test="@com.pcs.heaven.Common.util.MyBatisUtil@isNotEmpty(search_word)">
+	       		<choose>
+	           	    <when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('0', search_type)">
+	           	        and (board_title like concat(#{search_word}, '%') or board_conts  like concat(#{search_word}, '%'))
+	           	    </when>
+	           		<when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('1', search_type)">
+				    	and board_title  like concat(#{search_word}, '%')
+					</when>
+					<when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('2', search_type)">
+					    and board_conts  like concat(#{search_word}, '%')
+					</when>        
+					<otherwise></otherwise>
+	           	</choose>
+		   </if>
+	</select>
+
+	<select id="getNext" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(board_seq), 0)+1 next_seq
+		  from tb_board
+	</select>
+	
+	<insert id="insertInfoBoard" parameterType="java.util.HashMap">
+		insert into tb_board (manage_seq,
+									board_seq,	
+									board_title,
+									board_conts,
+									board_use_yn,
+									board_view_count,
+									board_writer,
+									board_wdate) 
+		values ( #{manage_seq},
+					#{board_seq},	
+					#{board_title},
+					#{board_conts},
+					#{board_use_yn},
+					#{board_view_count},
+					#{board_writer},
+					sysdate()
+		          )		
+	</insert>
+	    
+	<update id="updateInfoBoard" parameterType="java.util.HashMap">
+		update tb_board set board_title = #{board_title},
+									 board_conts = #{board_conts},
+									 board_use_yn = #{board_use_yn}
+          where board_seq = #{board_seq}
+	</update>
+	
+	<update id="deleteInfoBoard" parameterType="java.util.HashMap">
+		delete from tb_board
+          where board_seq = #{board_seq}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select manage_seq,
+					board_seq,	
+					board_title,
+					board_conts,
+					board_use_yn,
+					board_view_count,
+					board_writer,
+					board_wdate
+		     from tb_board
+		where board_seq = #{board_seq}
+	</select>
+	
+	
+	<select id="getFileNext" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(attach_seq), 0)+1 next_seq
+		  from tb_board_attach
+		 where board_seq = #{board_seq}
+	</select>
+	
+	<insert id="insertInfoBoardFile" parameterType="java.util.HashMap">
+		insert into tb_board_attach (board_seq,	
+									attach_seq,
+									attach_org_name,
+									attach_save_name,
+									attach_save_ext,
+									attach_file_size,
+									attach_writer,
+									attach_wdate) 
+		values ( #{board_seq},
+					#{attach_seq},	
+					#{attach_org_name},
+					#{attach_save_name},
+					#{attach_save_ext},
+					#{attach_file_size},
+					#{attach_writer},
+					sysdate()
+		          )		
+	</insert>
+	
+	<select id="getFileListOne" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		  select board_seq,	
+					attach_seq,
+					attach_org_name,
+					attach_save_name,
+					attach_file_size,
+					attach_save_ext,
+					attach_writer,
+					attach_wdate
+		     from tb_board_attach
+		   where board_seq = #{board_seq}
+		      and attach_seq = #{attach_seq} 
+	</select>
+	
+	<select id="getFileList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		  select board_seq,	
+					attach_seq,
+					attach_org_name,
+					attach_save_name,
+					attach_file_size,
+					attach_save_ext,
+					attach_writer,
+					attach_wdate
+		     from tb_board_attach
+		   where board_seq = #{board_seq}
+	</select>
+	
+	<delete id="deleteInfoBoardFile" parameterType="java.util.HashMap">
+			delete from tb_board_attach
+			where board_seq = #{board_seq}
+			   and attach_seq = #{attach_seq}
+	</delete>
+	
+</mapper>

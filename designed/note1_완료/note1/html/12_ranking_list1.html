@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>미래에셋 가족</h1>
+	    <button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_list">목록</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<ul class="list list_rank" data-role="listview" data-filter="true" data-filter-placeholder="이름(초성), 지점명 검색">
+		<!-- 나 -->
+		<li class="me">
+			<img src="../img/ico_buddy.png" alt="친구">
+			<em>나</em>
+			<p>코엑스지점</p>
+		    <button type="button" class="btn_cheer1">응원하기</button>
+		    <button type="button" class="btn_del2">친구목록삭제</button>
+		    <!-- 친구목록삭제 -->
+		    <button type="button" class="btn_refresh" style="display:none">refresh</button>
+		</li>
+		<!-- 친구 -->
+	    <li class="divider" data-role="list-divider">친구</li>
+		<li>
+			<img src="../img/ico_buddy.png" alt="친구">
+			<em>금일섭</em>
+			<p>스타타워지점</p>
+		    <button type="button" class="btn_cheer5">응원하기</button>
+		    <!-- 친구목록삭제 -->
+		    <button type="button" class="btn_del2" style="display:none">친구목록삭제</button>
+		</li>
+		<li>
+			<img src="../img/ico_buddy.png" alt="친구">
+			<em>김혜숙</em>
+			<p>서울지점</p>
+		    <button type="button" class="btn_cheer5">응원하기</button>
+		    <!-- 친구목록삭제 -->
+		    <button type="button" class="btn_del2" style="display:none">친구목록삭제</button>
+		</li>
+		<!-- 동료 -->
+	    <li class="divider" data-role="list-divider">동료</li>
+		<li>
+			<img src="../img/ico_buddy.png" alt="동료">
+			<em>강민아</em>
+			<p>삼성지점</p>
+		    <button type="button" class="btn_cheer5">응원하기</button>
+		</li>
+		<li>
+			<img src="../img/ico_buddy.png" alt="친구">
+			<em>금일섭</em>
+			<p>스타타워지점</p>
+		    <button type="button" class="btn_cheer5">응원하기</button>
+		</li>
+	</ul>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

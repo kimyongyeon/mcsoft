@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>상세 검색 목록</h1>
+    	<button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_func">추가 기능</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div class="crm_view">
+		<div>
+			<input type="checkbox" data-role="none" id="chkAll">
+			<label for="chkAll">전체 선택<em>0</em></label>
+		</div>
+		<ul class="bul_list">
+			<li>검색 결과 : <span>4명</span></li>
+			<li>조건 : <span>유망 고객, FF, 결혼</span></li>
+		</ul>
+	</div>
+	<ul class="list hot_list">
+		<li>
+			<img src="../img/ico_cus_m1.png" alt="미분류">
+			<em>김연아</em>
+			<p>2013.12.02 (월)<span class="sales4">PT</span></p>
+			<img src="../img/ico_smiley1.png" alt="">
+			<input type="checkbox" data-role="none">
+		</li>
+		<li>
+			<img src="../img/ico_cus_m1.png" alt="미분류">
+			<em>박태환</em>
+			<p>2013.12.02 (월)<span class="sales4">PT</span></p>
+			<img src="../img/ico_smiley2.png" alt="">
+			<input type="checkbox" data-role="none">
+		</li>
+		<li>
+			<img src="../img/ico_cus_m1.png" alt="미분류">
+			<em>김기리</em>
+			<p>2013.10.02 (수)<span class="sales1">TA</span></p>
+			<img src="../img/ico_smiley3.png" alt="">
+			<input type="checkbox" data-role="none">
+		</li>
+		<li>
+			<img src="../img/ico_cus_m1.png" alt="미분류">
+			<em>김나연</em>
+			<p>2013.12.02 (월)<span class="sales2">AP</span></p>
+			<input type="checkbox" data-role="none">
+		</li>
+	</ul>
+	<!-- /content -->
+
+	<!-- 추가 기능 화면 (모달 레이어) -->
+	<div class="bg_pop">
+		<div class="pop_func">
+			<button type="button"></button>
+			<ul>
+				<li>문자 보내기</li>
+				<li>선물하기</li>
+				<li>자료 보내기</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /추가 기능 화면 (모달 레이어) -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>CRM</h1>
+	    <button type="button" class="btn_home">홈</button>
+	    <button type="button" class="btn_submit btn_txt">선물함</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab4">
+		<li><button type="button">고객 찾기</button></li>
+		<li class="active"><button type="button">선물 가게</button></li>
+		<li><button type="button">자료실</button></li>
+		<li><button type="button">고객 분석</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="crm">
+		<div class="crm_gift">
+			<ul>
+				<li><img src="../img/img2.png" alt=""></li>
+			</ul>
+			<ul class="indicator">
+			    <li class="on"><span>1</span></li>
+			    <li><span>2</span></li>
+			    <li><span>3</span></li>
+			</ul>
+		</div>
+
+		<ul class="tabs2">
+			<li class="active"><button type="button">추천상품</button></li>
+			<li><button type="button">카테고리</button></li>
+		</ul>
+
+		<!-- 추천상품 -->
+		<div style="display:block">
+			<ul class="crm_list">
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>성공노트</strong>
+					<p><em>15,000원</em><span>앱</span></p>
+					<span class="ico_gift">선물가능 표시 아이콘(앱)</span>
+				</li>
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>데일 카네기의 자기 관리론</strong>
+					<p><em>3,000원</em><span>도서</span></p>
+				</li>
+				<li>
+					<img src="../img/img3.png" alt="상품이미지">
+					<strong>[벨킨] 아이폰용 충전 싱크독</strong>
+					<p><em>3,000원</em><span>액세서리</span></p>
+				</li>
+			</ul>
+		</div>
+		<!-- /추천상품 -->
+		
+		<!-- 카데고리 -->
+		<div style="display:none">
+			<ul class="crm_link">
+				<li><strong>앱&nbsp;<span>( 7 ) + 2</span></strong></li>
+				<li><strong>도서&nbsp;<span>( 5 )</span></strong></li>
+				<li><strong>액세서리&nbsp;<span>( 2 )</span></strong></li>
+			</ul>
+		</div>
+		<!-- /카데고리 -->
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

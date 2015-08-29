@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>성공노트 회원가입</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script src="../../lib/js/header.js" type="text/javascript"></script>      
+</head>
+<body class="bg_dot">
+<div data-role="page"  id="private_join_page">
+	<!-- header -->
+	<div data-role="header" class="header header_login">
+	    <h1>회원가입</h1>
+	    <a data-rel="back"><button type="button" class="btn_close"><span>닫기</span></button></a>
+	</div>
+	<!-- /header -->
+	
+	<!-- content -->
+	<div class="join">
+		<label for="" class="tit">아이디/비밀번호</label>
+		<div><input type="text" data-clear-btn="true" placeholder="이메일 아이디" class="_memer_id"></div>
+		<div class="mt5"><input type="password" data-clear-btn="true" placeholder="비밀번호(8자리 이상)" class="_member_pw"></div>
+		<button type="button" class="btn_pc">PC 키보드 보기</button>
+
+		<label for="" class="tit clear line_top">기본정보</label>
+		<div class="hbox">
+			<div class="flex"><input type="text" data-clear-btn="true" placeholder="이름" id="private_name" class="_member_name"></div>
+			<div class="w60 ml5"><input type="text" data-clear-btn="true" placeholder="인증키" id="private_key" class="_member_key"></div>
+		</div>
+		<div class="hbox line_bot">
+			<select name="member_company" id="private_company" data-role="none" class="_member_company select flex">
+			<!-- 
+				<option value="1">회사1</option>
+				<option value="2">회사2</option>
+				<option value="3">회사3</option>
+				<option value="4">회사4</option>
+				<option value="5">회사5</option>
+			 -->
+			</select>
+			<div class="w60 ml5"><input type="text" data-clear-btn="true" placeholder="지점" id="private_office" class="_member_office"></div>
+		</div>
+		
+		<div class="chk_all">
+			<input type="checkbox" data-role="none" id="chkAll" class="_agree_chk_all"><label for="chkAll">이용약관, 개인정보 수집·이용 모두 동의</label>
+		</div>
+		<ul class="chk_list">
+			<li>
+				<input type="checkbox" data-role="none" id="chk1" class="_agrees" name="chk"><label for="chk1" >성공노트 이용약관 동의</label>
+				<button type="button" class="_agreea">자세히</button>
+			</li>
+			<li>
+				<input type="checkbox" data-role="none" id="chk2" class="_agrees" name="chk"><label for="chk2">개인정보 수집·이용 동의</label>
+				<button type="button" >자세히</button>
+			</li>
+			<li>
+				<input type="checkbox" data-role="none" id="chk3" class="_agrees" name="chk"><label for="chk3">위치정보 이용약관 동의</label>
+				<button type="button" >자세히</button>
+			</li>
+		</ul>
+
+		<button type="button" class="_member_join btn1">가입하기</button>
+	</div>
+	<!-- /content -->
+	
+	<script src="app_js/private_join.js"></script>
+</div>
+
+</body>
+</html>

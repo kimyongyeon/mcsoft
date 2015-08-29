@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TrcodeInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select trcode, 
+		         dummy_yn,
+		         use_yn,
+		         dummy_data,
+		         create_date,
+		         title
+		  from tb_trcode
+		 order by trcode asc
+	</select>
+
+	<select id="getExist" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select count(*) cnt
+		  from tb_trcode
+		 where trcode = #{trcode}
+	</select>
+	
+	<insert id="insertInfoTrcode" parameterType="java.util.HashMap">
+		insert into tb_trcode (trcode, title, dummy_yn, use_yn, dummy_data, create_date) 
+		values (#{trcode}, #{title}, #{dummy_yn}, #{use_yn}, #{dummy_data}, sysdate())		
+	</insert>
+	    
+	<update id="updateInfoTrcode" parameterType="java.util.HashMap">
+		update tb_trcode set dummy_yn = #{dummy_yn},
+		                                   use_yn = #{use_yn},
+		                                   dummy_data = #{dummy_data},
+		                                   title = #{title}
+          where trcode = #{trcode}
+	</update>
+	
+	<update id="deleteInfoTrcode" parameterType="java.util.HashMap">
+		delete from tb_trcode
+          where trcode = #{trcode}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select trcode, 
+		         dummy_yn,
+		         use_yn,
+		         dummy_data,
+		         create_date,
+		         title
+		  from tb_trcode
+		where trcode = #{trcode}
+	</select>
+	
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!-- jdbc 프로퍼티를 읽는다. -->
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>/WEB-INF/mybatis/jdbc.properties</value>
+		</property>
+	</bean>
+
+	<!-- jdbc로 읽어온 정보를 매핑시켜 가지고 있는 빈 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="/WEB-INF/mybatis/mybatis-config.xml" />
+		<property name="transactionFactory">
+			<bean
+				class="org.apache.ibatis.transaction.managed.ManagedTransactionFactory" />
+		</property>
+	</bean>
+
+	<bean id="sqlSessionTempleteForMysql" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- multi db -->
+	<!-- <bean id="dataSource2" class="org.apache.commons.dbcp.BasicDataSource" 
+		destroy-method="close"> <property name="driverClassName" value="com.mysql.jdbc.Driver" 
+		/> <property name="url" value="${jdbc.url}" /> <property name="username" 
+		value="${jdbc.username}" /> <property name="password" value="${jdbc.password}" 
+		/> </bean> <bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource2" /> <property name="configLocation" 
+		value="/WEB-INF/mybatis/mybatis-config.xml" /> <property name="transactionFactory"> 
+		<bean class="org.apache.ibatis.transaction.managed.ManagedTransactionFactory" 
+		/> </property> </bean> <bean id="sqlSessionTemplete2" class="org.mybatis.spring.SqlSessionTemplate"> 
+		<qualifier value="secondDb"/> <constructor-arg index="0" ref="sqlSessionFactory2" 
+		/> </bean> -->
+
+
+	<!-- impl 정의 -->
+
+	<!-- <bean id="userInfoDaoImpl" class="com.pcs.heaven.UserInfo.Dao.UserInfoDaoImpl"> 
+		<property name="sqlSession" ref="sqlSessionTemplete" /> </bean> -->
+</beans>

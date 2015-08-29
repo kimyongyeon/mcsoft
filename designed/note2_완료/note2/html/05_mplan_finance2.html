@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+    <!-- header -->
+    <div data-role="header" data-position="fixed" class="header">
+        <h1>단기 목표자금</h1>
+        <button type="button" class="btn_reset">취소</button>
+        <button type="button" class="btn_submit">저장</button>
+    </div>
+    <!-- /header -->
+
+    <!-- content -->
+    <div class="mp_inp">
+        <h2 class="tit1">이벤트1</h2>
+        <button type="button" class="btn_del">삭제</button>
+        <dl>
+            <dt>필요자금<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>준비기간<br>(년)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>기대물가<br>상승률(%)</dt>
+            <dd><input type="tel"></dd>
+            <dt>연수익률<br>(이자율,%)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>이벤트명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+    </div>
+
+    <div class="mp_inp">
+        <h2 class="tit1">이벤트3</h2>
+        <button type="button" class="btn_add">추가</button>
+        <dl>
+            <dt>필요자금<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>준비기간<br>(년)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>기대물가<br>상승률(%)</dt>
+            <dd><input type="tel"></dd>
+            <dt>연수익률<br>(이자율,%)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>이벤트명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+    </div>
+
+    <!-- 안내문은 추가입력시 사라짐 -->
+    <p class="box_txt" style="display:none">이벤트를 추가할 때는 <button type="button" class="btn_add"></button> 를 클릭해주세요.<br>이벤트명은 10자 이내로 입력해주세요!</p>
+    <!-- /content -->
+</div>
+
+</body>
+</html>

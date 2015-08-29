@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CodeInfo">
+	
+	<!-- main -->
+	<select id="getCodeMainList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select main_cd, 
+		         main_nm,
+		         use_yn
+		  from tb_common_cd_main
+	</select>
+
+	<select id="getCodeMainNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(main_cd), 0)+1 nextcd
+		  from tb_common_cd_main
+	</select>
+	
+	<insert id="insertInfoCodeMain" parameterType="java.util.HashMap">
+		insert into tb_common_cd_main (main_cd, main_nm, use_yn) 
+		values (#{main_cd}, #{main_nm}, #{use_yn})		
+	</insert>
+	    
+	<update id="updateInfoCodeMain" parameterType="java.util.HashMap">
+		update tb_common_cd_main set main_nm = #{main_nm},
+		                                       use_yn = #{use_yn}
+          where main_cd = #{main_cd}
+	</update>
+	
+	<update id="deleteInfoCodeMain" parameterType="java.util.HashMap">
+		delete from tb_common_cd_main
+          where main_cd = #{main_cd}
+	</update>
+	
+	<select id="getCodeMainInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select main_cd, 
+		         main_nm,
+		         use_yn
+		  from tb_common_cd_main
+		where main_cd = #{main_cd}
+	</select>
+	
+	<!-- middle -->
+	<select id="getCodeMiddleList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select a.main_cd, 
+		         a.main_nm,		         
+		         b.middle_cd,
+		         b.middle_nm,
+		         b.use_yn
+		  from tb_common_cd_main a,
+		         tb_common_cd_middle b
+		where a.main_cd = b.main_cd	
+		   and a.main_cd = #{main_cd} 	     
+	</select>
+
+	<select id="getCodeMiddleNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		 select ifnull(max(middle_cd), 0)+1 nextcd
+		   from tb_common_cd_middle
+		 where main_cd = #{main_cd}
+	</select>
+	
+	<insert id="insertInfoCodeMiddle" parameterType="java.util.HashMap">
+		insert into tb_common_cd_middle (main_cd, middle_cd, middle_nm, use_yn) 
+		values (#{main_cd}, #{middle_cd}, #{middle_nm}, #{use_yn})		
+	</insert>
+	    
+	<update id="updateInfoCodeMiddle" parameterType="java.util.HashMap">
+		update tb_common_cd_middle set middle_nm = #{middle_nm},
+		                                              use_yn = #{use_yn}
+          where main_cd = #{main_cd}
+             and middle_cd = #{middle_cd}
+	</update>
+	
+	<update id="deleteInfoCodeMiddle" parameterType="java.util.HashMap">
+		 delete from tb_common_cd_middle
+          where main_cd = #{main_cd}
+             and middle_cd = #{middle_cd}
+	</update>
+	
+	<select id="getCodeMiddleInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select a.main_cd, 
+		         a.main_nm,		         
+		         b.middle_cd,
+		         b.middle_nm,
+		         b.use_yn
+		  from tb_common_cd_main a,
+		         tb_common_cd_middle b
+		where a.main_cd = b.main_cd
+		   and a.main_cd = #{main_cd}
+           and b.middle_cd = #{middle_cd} 
+	</select>
+	
+	
+	<!-- small -->
+	<select id="getCodeSmallList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select a.main_cd, 
+		         a.main_nm,		         
+		         b.middle_cd,
+		         b.middle_nm,
+		         c.small_cd,
+		         c.small_nm,
+		         c.use_yn
+		  from tb_common_cd_main a,
+		         tb_common_cd_middle b,
+		         tb_common_cd_small c
+		where a.main_cd = b.main_cd
+		   and b.main_cd = c.main_cd
+		   and b.middle_cd = c.middle_cd	
+		   and a.main_cd = #{main_cd} 	 
+		   and b.middle_cd = #{middle_cd}    
+	</select>
+	
+	<select id="getCodeSmallNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		 select ifnull(max(small_cd), 0)+1 nextcd
+		   from tb_common_cd_small
+		 where main_cd = #{main_cd}
+		    and middle_cd = #{middle_cd}
+	</select>
+	
+	<insert id="insertInfoCodeSmall" parameterType="java.util.HashMap">
+		insert into tb_common_cd_small (main_cd, middle_cd, small_cd, small_nm, use_yn) 
+		values (#{main_cd}, #{middle_cd}, #{small_cd}, #{small_nm}, #{use_yn})		
+	</insert>
+	    
+	<update id="updateInfoCodeSmall" parameterType="java.util.HashMap">
+		update tb_common_cd_small set small_nm = #{small_nm},
+		                                             use_yn = #{use_yn}
+          where main_cd = #{main_cd}
+             and middle_cd = #{middle_cd}
+             and small_cd = #{small_cd}
+	</update>
+	
+	<update id="deleteInfoCodeSmall" parameterType="java.util.HashMap">
+		 delete from tb_common_cd_small
+          where main_cd = #{main_cd}
+             and middle_cd = #{middle_cd}
+             and small_cd = #{small_cd}
+	</update>
+	
+	<select id="getCodeSmallInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select a.main_cd, 
+		         a.main_nm,		         
+		         b.middle_cd,
+		         b.middle_nm,
+		         c.small_cd,
+		         c.small_nm,
+		         c.use_yn
+		  from tb_common_cd_main a,
+		         tb_common_cd_middle b,
+		         tb_common_cd_small c
+		where a.main_cd = b.main_cd
+		   and b.main_cd = c.main_cd
+		   and b.middle_cd = c.middle_cd	
+		   and a.main_cd = #{main_cd} 	 
+		   and b.middle_cd = #{middle_cd}  
+		   and c.small_cd = #{small_cd} 
+	</select>
+	
+</mapper>

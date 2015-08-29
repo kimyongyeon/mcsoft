@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>고객 정보</h1>
+    	<button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_edit">편집</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab5">
+		<li class="active"><button type="button">기본 정보</button></li>
+		<li><button type="button">상세 정보</button></li>
+		<li><button type="button">재무 설계</button></li>
+		<li><button type="button">계약 정보</button></li>
+		<li><button type="button">프로세스</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="cus_info">
+		<div class="thumb">
+			<img src="../img/thumb_cus1.png" alt="미분류">
+			<em class="favor">즐겨찾기</em>
+		</div>
+		<dl class="hbox jc descrip">
+			<dt class="char">고객 이름</dt>
+			<dd class="flex">고준희</dd>
+		</dl>
+		<dl class="hbox jc descrip">
+			<dt class="char">고객 분류</dt>
+			<dd class="flex">잠재 고객</dd>
+		</dl>
+		<dl class="hbox jc descrip">
+			<dt class="char">생일</dt>
+			<dd class="flex">1990.01.07</dd>
+		</dl>
+	</div>
+
+	<ul class="cus_con">
+		<li>
+			<h4>TA 설정</h4>
+			<dl class="hbox jc">
+				<dt class="char">TA 기준일</dt>
+				<dd class="flex"><input type="text" value="2013.01.07"></dd>
+				<dt class="char">주기</dt>
+				<dd class="w25">
+					<select name="" data-role="none">
+						<option value="">1개월</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<h4>전화번호</h4>
+			<div class="hbox jc">
+				<select name="" data-role="none" class="w25">
+					<option value="">휴대폰</option>
+				</select>
+				<p class="flex cus_txt">010-3930-9665</p>
+				<button type="button" class="btn_call">전화걸기</button>
+				<button type="button" class="btn_send ml10">문자보내기</button>
+			</div>
+		</li>
+		<li>
+			<h4>주소</h4>
+			<div class="hbox jc">
+				<select name="" data-role="none" class="w25">
+					<option value="">집</option>
+				</select>
+				<p class="flex cus_txt">서울 송파구 송이로 28길 25 2층 (문정동)</p>		
+				<button type="button" class="btn_map">지도 표시</button>
+			</div>
+		</li>
+		<li>
+			<h4>이메일</h4>
+			<div class="hbox jc">
+				<select name="" data-role="none" class="w25">
+					<option value="">개인</option>
+				</select>
+				<p class="flex cus_txt">angelko@gmail.com</p>
+				<button type="button" class="btn_email">이메일 보내기</button>
+			</div>
+		</li>
+	</ul>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

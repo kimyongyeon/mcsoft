@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientDreamInfo">
+	
+    <select id="getUserForClientDreamList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 dream_seq, 
+				 ifnull(dream_title, '') dream_title,
+				 ifnull(dream_conts, '') dream_conts,
+				 ifnull(dream_start_dt, '') dream_start_dt,
+				 ifnull(dream_end_dt, '') dream_end_dt
+          from tb_client_dream
+         where main_seq = #{main_seq}
+         order by dream_seq asc
+    </select>
+	
+	<insert id="insertIntoClientdreamInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_dream (
+		                                        main_seq,			
+												dream_title,
+												dream_conts,
+												dream_start_dt,
+												dream_end_dt
+												)
+									VALUES (
+												#{main_seq} ,	
+												#{dream_title},
+												#{dream_conts},
+												#{dream_start_dt},
+												#{dream_end_dt}
+											   )
+	</insert>
+	
+	<delete id="deleteIntoClientDreamInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_dream
+		where main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<!-- header -->
+<div class="header">
+    <div class="hbox cc">
+        <button type="button">이전달 보기</button>
+        <h1>예산&amp;지출<span>2014 . 01</span></h1>
+        <button type="button">다음달 보기</button>
+    </div>
+    <button type="button" class="btn_back">이전</button>
+    <button type="button" class="btn_text">다음단계</button>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div class="spend_income">
+    <em>1월30일<br>토요일</em>
+    <a href="#">홍길동님의 사용가능 소득<span>6,500,000 원</span></a>
+</div>
+
+<table class="spend_tbl">
+    <thead>
+        <tr>
+            <th scope="col">지출분류</th>
+            <th scope="col">금월예산</th>
+            <th scope="col">전월사용액</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><button type="button">자기계발</button></th>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><button type="button">저축 및 투자</button></th>
+            <td>1,500,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><button type="button">고정지출</button></th>
+            <td>1,500,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><button type="button">변동지출</button></th>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><button type="button">미분류</button></th>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="row">총지출</th>
+            <td>3,000,000</td>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="spend_btn">
+    <button type="button" class="btn_info">안내</button>
+    <button type="button" class="btn_budget">전월예산복사</button>
+</div>
+<!-- /content -->
+
+</body>
+</html>

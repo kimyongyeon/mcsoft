@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body class="bg_dot">
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" class="header">
+	    <h1>메모 편집</h1>
+    	<button type="button" class="btn_reset">취소</button>
+		<button type="button" class="btn_submit">저장</button>
+	</div>
+	<!-- /header -->
+	
+	<!-- content -->
+	<div class="memofix memoinp">
+		<div class="memo memo1">
+			<span>2013.09.11 (수) 10:00</span>
+			<button type="button" class="btn_star">메모 중요도</button>
+			<button type="button" class="btn_color">메모 색상</button>
+			<em>고준희</em>
+			<textarea rows="6" placeholder="메모" data-role="none">고준희가 랩을 한다, 헝헝헝, 아라리요 내가 바로 아라리요. 어쩌구, 저쩌구</textarea>
+			<button type="button" class="btn_photo"></button>
+			<ul class="hbox">
+				<li>
+					<img src="../img/img1.png" alt="썸네일">
+					<button type="button" class="">삭제</button>
+				</li>
+				<li>
+					<img src="../img/img1.png" alt="썸네일">
+					<button type="button" class="">삭제</button>
+				</li>
+				<li>
+					<img src="../img/img1.png" alt="썸네일">
+					<button type="button" class="">삭제</button>
+				</li>
+				<li>
+					<img src="../img/img1.png" alt="썸네일">
+					<button type="button" class="">삭제</button>
+				</li>
+				<li>
+					<img src="../img/img1.png" alt="썸네일">
+					<button type="button" class="">삭제</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_photo">
+			<h6>사진 추가<button type="button" class="">닫기</button></h6>
+			<ul>
+				<li>사진 찍기</li>
+				<li>사진 앨범(한 장 올리기)</li>
+				<li>사진 앨범(여러장 올리기)</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

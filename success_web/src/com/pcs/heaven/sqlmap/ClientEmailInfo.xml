@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientEmailInfo">
+	
+    <select id="getUserForClientEmailList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 email_seq,
+				 ifnull(email_section, '') email_section, 
+				 ifnull(email_address, '') email_address
+          from tb_client_email
+         where main_seq = #{main_seq}
+         order by email_seq desc
+    </select>
+	
+	<insert id="insertIntoClientEmailInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_email (
+		                                        main_seq,												
+												email_section,
+												email_address
+												)
+									VALUES (
+												#{main_seq} ,												
+												#{email_section} ,
+												#{email_address}
+											   )
+	</insert>
+	
+	<delete id="deleteIntoClientEmailInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_email
+		where main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>

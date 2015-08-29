@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MenuInfo">
+	
+
+	<select id="getMenuMainList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select main_menu_cd, 
+		         main_menu_nm,
+		         main_menu_url,
+		         main_menu_order
+		  from tb_menu_main
+		 order by main_menu_order asc
+	</select>
+
+	<select id="getMenuMainNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(main_menu_cd), 0)+1 nextcd
+		  from tb_menu_main
+	</select>
+	
+	<insert id="insertInfoMenuMain" parameterType="java.util.HashMap">
+		insert into tb_menu_main (main_menu_cd, main_menu_nm, main_menu_url, main_menu_order) 
+		values (#{main_menu_cd}, #{main_menu_nm}, #{main_menu_url}, #{main_menu_order})		
+	</insert>
+	    
+	<update id="updateInfoMenuMain" parameterType="java.util.HashMap">
+		update tb_menu_main set main_menu_nm = #{main_menu_nm},
+		                                   main_menu_url = #{main_menu_url},
+		                                   main_menu_order = #{main_menu_order}
+          where main_menu_cd = #{main_menu_cd}
+	</update>
+	
+	<update id="deleteInfoMenuMain" parameterType="java.util.HashMap">
+		delete from tb_menu_main
+          where main_menu_cd = #{main_menu_cd}
+	</update>
+	
+	<select id="getMenuMainInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select main_menu_cd, 
+		         main_menu_nm,
+		         main_menu_url,
+		         main_menu_order
+		  from tb_menu_main
+		where main_menu_cd = #{main_menu_cd}
+	</select>
+	
+</mapper>

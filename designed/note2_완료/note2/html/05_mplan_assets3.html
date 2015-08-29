@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+    <!-- header -->
+    <div data-role="header" data-position="fixed" class="header">
+        <h1>부채</h1>
+        <button type="button" class="btn_reset">취소</button>
+        <button type="button" class="btn_submit">저장</button>
+    </div>
+    <!-- /header -->
+
+    <!-- content -->
+    <div class="mp_inp">
+        <h2 class="tit5">부채1</h2>
+        <button type="button" class="btn_del">삭제</button>
+        <div class="congrats"><span>축 만기! 수고하셨어요!</span></div>
+        <dl>
+            <dt>대출종류</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">담보/신용</option>
+                    <option value="">담보대출</option>
+                    <option value="">신용대출</option>
+                </select>
+            </dd>
+            <dt>상환방식</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">선택</option>
+                    <option value="">원리금균등</option>
+                    <option value="">원금균등</option>
+                    <option value="">만기일시</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>대출금액<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>담보물명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <dl>
+            <dt>대출금리<br>(%)</dt>
+            <dd><input type="tel"></dd>
+            <dt>거치기간<br>(개발)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>대출기간</dt>
+            <dd class="hbox">
+                <div class="flex"><input type="tel" placeholder="시작일"></div>
+                <div class="flex ml7"><input type="tel" placeholder="만기일"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>부채명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+    </div>
+
+    <div class="mp_inp">
+        <h2 class="tit5">부채1</h2>
+        <button type="button" class="btn_add">추가</button>
+        <dl>
+            <dt>대출종류</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">담보/신용</option>
+                    <option value="">담보대출</option>
+                    <option value="">신용대출</option>
+                </select>
+            </dd>
+            <dt>상환방식</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">선택</option>
+                    <option value="">원리금균등</option>
+                    <option value="">원금균등</option>
+                    <option value="">만기일시</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>대출금액<br>(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>담보물명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <dl>
+            <dt>대출금리<br>(%)</dt>
+            <dd><input type="tel"></dd>
+            <dt>거치기간<br>(개발)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>대출기간</dt>
+            <dd class="hbox">
+                <div class="flex"><input type="tel" placeholder="시작일"></div>
+                <div class="flex ml7"><input type="tel" placeholder="만기일"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>부채명</dt>
+            <dd><input type="text"></dd>
+        </dl>
+    </div>
+    <!-- /content -->
+</div>
+
+</body>
+</html>

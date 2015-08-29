@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>CRM</h1>
+	    <button type="button" class="btn_home">홈</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab4">
+		<li><button type="button">고객 찾기</button></li>
+		<li><button type="button">선물 가게</button></li>
+		<li><button type="button">자료실</button></li>
+		<li class="active"><button type="button">고객 분석</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="crm">
+		<h2 class="bar_label">고객 분석 - 고객 분류</h2>
+		<div class="crm_chart">
+			<canvas id="canvas"></canvas>
+			<ul>
+				<li>CEO</li>
+				<li>전문직</li>
+				<li>자영업</li>
+				<li>회사원</li>
+				<li>주부</li>
+				<li>기타</li>
+				<li>미확인</li>
+			</ul>
+		</div>
+		<table class="tbl">
+			<tbody>
+				<tr>
+					<th scope="col">CEO</th>
+					<th scope="col">전문직</th>
+					<th scope="col">자영업</th>
+					<th scope="col">회사원</th>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>20</td>
+					<td>20</td>
+					<td>30</td>
+				</tr>
+				<tr>
+					<th scope="col">주부</th>
+					<th scope="col">기타</th>
+					<th scope="col">미확인</th>
+					<th scope="col">전체</th>
+				</tr> 
+				<tr>
+					<td>10</td>
+					<td>10</td>
+					<td>20</td>
+					<td>120</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:block">
+		<div class="pop_crm">
+			<h6>고객 분석 선택</h6>
+			<ul>
+				<li class="hbox">
+					<select name="" data-role="none" class="flex">
+						<option value="">고객분류</option>
+						<option value="">잠재 고객</option>
+						<option value="">가망 고객</option>
+						<option value="">유망 고객</option>
+						<option value="">신규 고객</option>
+						<option value="">재구매 고객</option>
+						<option value="">고객 전도사</option>
+						<option value="">비고객</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">프로세스</option>
+						<option value="">AP</option>
+						<option value="">FF</option>
+						<option value="">PT</option>
+						<option value="">CL</option>
+						<option value="">증권 전달</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">소득</option>
+						<option value="">1,200 미만</option>
+						<option value="">4,800 미만</option>
+						<option value="">8,800 미만</option>
+						<option value="">1억5천 미만</option>
+						<option value="">1억5천 이상</option>
+					</select>
+				</li>
+				<li class="hbox mt5">
+					<select name="" data-role="none" class="flex">
+						<option value="">자산</option>
+						<option value="">1억 미만</option>
+						<option value="">5억 미만</option>
+						<option value="">10억 미만</option>
+						<option value="">30억 미만</option>
+						<option value="">30억 이상</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">직업</option>
+						<option value="">CEO</option>
+						<option value="">전문직</option>
+						<option value="">자영업</option>
+						<option value="">회사원</option>
+						<option value="">주부</option>
+						<option value="">기타</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">연령</option>
+						<option value="">0~14세</option>
+						<option value="">15~24세</option>
+						<option value="">25~34세</option>
+						<option value="">35~44세</option>
+						<option value="">45~59세</option>
+						<option value="">60세 이상</option>
+					</select>
+				</li>
+				<li class="hbox mt5">
+					<select name="" data-role="none" class="flex">
+						<option value="">결혼</option>
+						<option value="">유</option>
+						<option value="">무</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">황금노트</option>
+						<option value="">유</option>
+						<option value="">무</option>
+					</select>
+					<select name="" data-role="none" class="flex ml5">
+						<option value="">생월</option>
+						<option value="">1월</option>
+						<option value="">2월</option>
+						<option value="">3월</option>
+						<option value="">4월</option>
+						<option value="">5월</option>
+						<option value="">6월</option>
+						<option value="">7월</option>
+						<option value="">8월</option>
+						<option value="">9월</option>
+						<option value="">10월</option>
+						<option value="">11월</option>
+						<option value="">12월</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+<!-- script -->
+<script type="text/javascript" src="../js/pie_chart.js"></script>
+
+</body>
+</html>

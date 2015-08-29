@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PostItInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		   select postit_seq,
+					postit_user_id,
+					postit_client_id,
+					postit_gb,
+					postit_color,    
+					postit_dt,
+					postit_time,
+					postit_conts,
+					postit_wdate
+		     from tb_postit
+		   where 1 = 1
+		   <if test="postit_user_id != null and postit_user_id != ''">
+		       postit_user_id = #{postit_user_id}
+		   </if>		   
+		    order by postit_seq desc
+	</select>
+	
+	<select id="getCount" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		 select count(*) cnt
+		   from tb_postit
+		  where postit_user_id = #{postit_user_id}
+	</select>
+
+	<select id="getNext" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(postit_seq), 0)+1 next_seq
+		  from tb_postit
+	</select>
+	
+	<insert id="insertInfoPostIt" parameterType="java.util.HashMap">
+		insert into tb_postit (postit_seq,
+									postit_user_id,
+									postit_client_id,
+									postit_gb,
+									postit_color,    
+									postit_dt,
+									postit_time,
+									postit_conts,
+									postit_wdate) 
+		values ( #{postit_seq},
+					#{postit_user_id},	
+					#{postit_client_id},
+					#{postit_gb},
+					#{postit_color},
+					#{postit_dt},
+					#{postit_time},
+					#{postit_conts},
+					sysdate()
+		          )		
+	</insert>
+	    
+	<update id="updateInfoPostIt" parameterType="java.util.HashMap">
+		update tb_postit set postit_client_id = #{postit_client_id},
+									 postit_gb = #{postit_gb},
+									 postit_color = #{postit_color},
+									 postit_dt = #{postit_dt},
+									 postit_time = #{postit_time},
+									 postit_conts = #{postit_conts}
+          where postit_seq = #{postit_seq}
+	</update>
+	
+	<update id="deleteInfoPostIt" parameterType="java.util.HashMap">
+		delete from tb_postit
+          where postit_seq = #{postit_seq}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select postit_seq,
+					postit_user_id,
+					postit_client_id,
+					postit_gb,
+					postit_color,    
+					postit_dt,
+					postit_time,
+					postit_conts,
+					postit_wdate
+		     from tb_postit
+		where postit_seq = #{postit_seq}
+	</select>
+	
+	
+	<select id="getFileNext" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(attach_seq), 0)+1 next_seq
+		  from tb_postit_attach
+		 where board_seq = #{board_seq}
+	</select>
+	
+	<insert id="insertInfoPostItFile" parameterType="java.util.HashMap">
+		insert into tb_postit_attach (postit_seq,	
+									attach_seq,
+									attach_org_name,
+									attach_save_name,
+									attach_save_ext,
+									attach_file_size,
+									attach_writer,
+									attach_wdate) 
+		values ( #{postit_seq},
+					#{attach_seq},	
+					#{attach_org_name},
+					#{attach_save_name},
+					#{attach_save_ext},
+					#{attach_file_size},
+					#{attach_writer},
+					sysdate()
+		          )		
+	</insert>
+	
+	<select id="getFileListOne" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		   select postit_seq,
+					attach_seq,
+					attach_org_name,
+					attach_save_name,
+					attach_save_ext,
+					attach_file_size,
+					attach_writer,
+					attach_wdate
+		     from tb_postit
+		   where postit_seq = #{postit_seq}
+		      and attach_seq = #{attach_seq} 
+	</select>
+	
+	<select id="getFileList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		   select postit_seq,
+					attach_seq,
+					attach_org_name,
+					attach_save_name,
+					attach_save_ext,
+					attach_file_size,
+					attach_writer,
+					attach_wdate
+		     from tb_postit
+		   where postit_seq = #{postit_seq}
+	</select>
+	
+	<delete id="deleteInfoPostItFile" parameterType="java.util.HashMap">
+			delete from tb_postit_attach
+			where postit_seq = #{postit_seq}
+			   and attach_seq = #{attach_seq}
+	</delete>
+	
+</mapper>

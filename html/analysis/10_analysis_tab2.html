@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>성과분석</h1>
+	    <button type="button" class="btn_home">홈</button>
+	    <button type="button" class="btn_init">초기화</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab4">
+		<li><button type="button">비전 설정</button></li>
+		<li class="active"><button type="button">연간 계획</button></li>
+		<li><button type="button">월간 분석</button></li>
+		<li><button type="button">주간 분석</button></li>
+	</ul>
+	<!-- /tab -->
+	
+	<!-- content -->
+	<div class="analysis">
+		<div class="bar_date">
+			<div>
+				<h2>2014년 사업계획</h2>
+				<button type="button" class="btn_prev">이전</button>
+				<button type="button" class="btn_next">다음</button>
+			</div>
+		</div>
+
+		<h3 class="tit_analysis">달성 목표<span>(예) MDRT 되기</span></h3>
+		<div class="memo memo1">
+			<textarea rows="3" data-role="none"></textarea>
+		</div>
+
+		<h3 class="tit_analysis">소득 목표<span>(단위:만원)</span></h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:15%">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:15%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col"><span class="ico_tbl1">소득 목표</span></th>
+					<th scope="col">소득</th>
+					<th scope="col">환산 성적</th>
+					<th scope="col">조회 보험료</th>
+					<th scope="col">건</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>월</td>
+					<td><input type="tel" data-role="none" value="500"></td>
+					<td><input type="tel" data-role="none" value="700"></td>
+					<td><input type="tel" data-role="none" value="100"></td>
+					<td><input type="tel" data-role="none" value="5"></td>
+				</tr>
+				<tr>
+					<td>년</td>
+					<td><input type="tel" data-role="none" value="6,000"></td>
+					<td><input type="tel" data-role="none" value="8,400"></td>
+					<td><input type="tel" data-role="none" value="1,200"></td>
+					<td><input type="tel" data-role="none" value="60"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3 class="tit_analysis">활동 목표</h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col"><span class="ico_tbl2">활동 목표</span></th>
+					<th scope="col">TA</th>
+					<th scope="col">AP</th>
+					<th scope="col">FF</th>
+					<th scope="col">PT</th>
+					<th scope="col">RP</th>
+					<th scope="col">계약</th>
+					<th scope="col">소계</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>주</td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+				</tr>
+				<tr>
+					<td>월</td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+					<td><input type="tel" data-role="none" value=""></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:block">
+		<div class="pop_aim">
+			<h6>연간 계획 초기화<input type="checkbox" data-role="none"></h6>
+			<ul>
+				<li>달성 목표<input type="checkbox" data-role="none"></li>
+				<li>소득 목표<input type="checkbox" data-role="none"></li>
+				<li>활동 목표<input type="checkbox" data-role="none"></li>
+			</ul>
+			<div class="btn_box">
+				<button type="button" class="btn2">취소</button>
+				<button type="button" class="btn1">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

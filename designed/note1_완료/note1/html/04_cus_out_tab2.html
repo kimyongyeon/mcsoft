@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>고객 정보</h1>
+    	<button type="button" class="btn_back">이전</button>
+	    <button type="button" class="btn_edit">편집</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab5">
+		<li><button type="button">기본 정보</button></li>
+		<li class="active"><button type="button">상세 정보</button></li>
+		<li><button type="button">재무 설계</button></li>
+		<li><button type="button">계약 정보</button></li>
+		<li><button type="button">프로세스</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="cus_wrap">
+		<h3 class="cus_tit">고객 상세 정보</h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:auto">
+				<col style="width:20%">
+				<col style="width:auto">
+			</colgroup>
+			<tr>
+				<th scope="row">성별</td>
+				<td>여</td> 
+				<th scope="row">결혼</td>
+				<td>유 - 2007.11.18</td> 
+			</tr>
+			<tr>
+				<th scope="row">생월</td>
+				<td>1월</td> 
+				<th scope="row">연령</td>
+				<td>16~25세</td> 
+			</tr>
+			<tr>
+				<th scope="row">직업</td>
+				<td>미확인</td> 
+				<th scope="row">맞벌이</td>
+				<td>무</td> 
+			</tr>
+			<tr>
+				<th scope="row">소득</td>
+				<td>8,800미만</td> 
+				<th scope="row">자산</td>
+				<td>30억 이상</td> 
+			</tr>
+		</table>
+		<h3 class="cus_tit">가족 정보</h3>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:20%">
+				<col style="width:80%">
+			</colgroup>
+			<tr>
+				<th scope="row">배우자</td>
+				<td>홍길동 - 1971.01.07</td> 
+			</tr>
+			<tr>
+				<th scope="row">자녀</td>
+				<td>홍성흔</td> 
+			</tr>
+			<tr>
+				<th scope="row">가족</td>
+				<td>고준형</td> 
+			</tr>
+		</table>
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

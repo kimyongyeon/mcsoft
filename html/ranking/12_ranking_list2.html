@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>응원 목록</h1>
+	    <button type="button" class="btn_back">이전</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<ul class="list_cheer">
+		<!-- 내가 받은 응원 메시지 (응답 전) -->
+		<li>
+			<em>금일섭<span>스타타워지점</span></em>
+			<p>김연하님~~ 오늘 하루도 힘차게 보내세요!</p>
+			<button type="button" class="btn_close2">닫기</button>
+			<button type="button" class="btn4">응답하기</button>
+			<span class="ico_cheer3">웃음</span>
+			<span class="respond1">02.10 10:33</span>
+		</li>
+		<!-- 내가 받은 응원 메시지 (응답 후) -->
+		<li>
+			<em>나<span>코엑스지점</span></em>
+			<p>김연하님~~ 오늘 하루도 힘차게 보내세요!</p>
+			<button type="button" class="btn_close2">닫기</button>
+			<span class="ico_cheer0">디폴트</span>
+			<span class="respond2">02.11 10:33</span>
+		</li>
+		<li>
+			<em>강재규 FC<span>미래애셋</span></em>
+			<p>오냐~~ 너도 파이팅!!!</p>
+			<button type="button" class="btn_close2">닫기</button>
+			<span class="ico_cheer3">웃음</span>
+			<span class="respond1">02.11 10:33</span>
+		</li>
+	</ul>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:block">
+		<div class="pop_cheer">
+			<h6>응원하기</h6>
+			<section class="hbox jc">
+				<button type="button" class="ico_cheer1">일등</button>
+				<button type="button" class="ico_cheer2">축하</button>
+				<button type="button" class="ico_cheer3">웃음</button>
+				<button type="button" class="ico_cheer4">격려</button>
+				<button type="button" class="ico_cheer5">사랑</button>
+			</section>
+			<section>
+				<textarea rows="3" data-role="none" placeholder="응원의 글을 입력하세요.(50자내외)"></textarea>
+			</section>
+			<div class="btn_box">
+				<button type="button" class="btn2">취소</button>
+				<button type="button" class="btn1">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardManageInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select manage_seq,
+				 manage_title,
+				 manage_attach_yn,
+				 manage_attach_cnt,
+				 manage_top_conts,
+				 manage_bot_conts,
+				 manage_use_yn,
+				 manage_writer,
+				 manage_wdate
+		  from tb_board_manage
+		 order by manage_seq asc
+	</select>
+	
+	<select id="getBoardManageNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(manage_seq), 0)+1 nextcd
+		  from tb_board_manage
+	</select>
+	
+	<insert id="insertInfoBoardManage" parameterType="java.util.HashMap">
+		insert into tb_board_manage ( manage_seq,
+												 manage_title,
+												 manage_attach_yn,
+												 manage_attach_cnt,
+												 manage_top_conts,
+												 manage_bot_conts,
+												 manage_use_yn,
+												 manage_writer,
+												 manage_wdate) 
+		values ( #{manage_seq},
+					#{manage_title},
+					#{manage_attach_yn},
+					#{manage_attach_cnt},
+					#{manage_top_conts},
+					#{manage_bot_conts},
+					#{manage_use_yn},
+					#{manage_writer},
+					sysdate()
+				)		
+	</insert>
+	    
+	<update id="updateInfoBoardManage" parameterType="java.util.HashMap">
+		update tb_board_manage set manage_title = #{manage_title},
+		                                        manage_use_yn = #{manage_use_yn},
+		                                        manage_attach_yn = #{manage_attach_yn},
+		                                        manage_attach_cnt = #{manage_attach_cnt},
+		                                        manage_top_conts = #{manage_top_conts},
+		                                        manage_bot_conts = #{manage_bot_conts}
+          where manage_seq = #{manage_seq}
+	</update>
+	
+	<update id="deleteInfoBoardManage" parameterType="java.util.HashMap">
+		delete from tb_board_manage
+          where manage_seq = #{manage_seq}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select manage_seq,
+				 manage_title,
+				 manage_attach_yn,
+				 manage_attach_cnt,
+				 manage_top_conts,
+				 manage_bot_conts,
+				 manage_use_yn,
+				 manage_writer,
+				 manage_wdate
+          from tb_board_manage				 
+		where manage_seq = #{manage_seq}
+	</select>
+	
+	
+	<select id="getListForMenu" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select manage_seq,
+				 manage_title,
+				 manage_attach_yn,
+				 manage_attach_cnt,
+				 manage_top_conts,
+				 manage_bot_conts,
+				 manage_use_yn,
+				 manage_writer,
+				 manage_wdate
+		  from tb_board_manage
+		where manage_use_yn = 'Y'
+		 order by manage_seq asc
+	</select>
+	
+	<delete id="deleteCalendar" parameterType="java.util.HashMap">
+	    delete from tb_calendar   
+	</delete>
+	
+	<insert id="insertCalendar" parameterType="java.util.HashMap">
+	    insert into tb_calendar (cal_fullday,
+										cal_fulldayopt,
+										cal_year,
+										cal_month,
+										cal_day,
+										cal_youl_han,
+										cal_yoil_cnt) 
+	    values (
+	    			#{cal_fullday},
+					#{cal_fulldayopt},
+					#{cal_year},
+					#{cal_month},
+					#{cal_day},
+					#{cal_youl_han},
+					#{cal_yoil_cnt}
+	    )
+	</insert>
+	
+</mapper>

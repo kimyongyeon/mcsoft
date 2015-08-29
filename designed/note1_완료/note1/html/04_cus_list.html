@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+		<div style="display:none">
+		    <h1>고객카드</h1>
+		    <button type="button" class="btn_home">홈</button>
+		    <button type="button" class="btn_nav_add">고객 추가</button>
+		    <button type="button" class="btn_nav_del">고객 삭제</button>
+		</div>
+		<!-- 고객 삭제 -->
+	    <div style="display:block">
+		    <h1>고객 삭제</h1>
+		    <button type="button" class="btn_reset">취소</button>
+		    <button type="button" class="btn_submit">삭제</button>
+	    </div>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div>
+		<ul class="list cus_list" data-role="listview" data-filter="true" data-filter-placeholder="이름(초성), 전화번호 검색">
+			<!-- 새로운 고객 -->
+		    <li class="divider" data-role="list-divider">새로운 고객</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>강현창</em>
+				<p>010-3020-1004</p>
+				<button type="button" class="btn_hot" style="display:none">핫 버튼</button>
+			    <!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none">
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>고길동</em>
+				<p>010-3020-1004</p>
+				<button type="button" class="btn_hot active" style="display:none">핫 버튼</button>
+			    <!-- 고객 삭제 -->			    
+				<input type="checkbox" data-role="none">
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>고준희</em>
+				<p>010-3020-1004</p>
+			    <!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none">
+			</li>
+
+			<!-- 황금노트 고객 -->
+		    <li class="divider" data-role="list-divider">황금노트 고객</li>
+		    <li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>김연아</em>
+				<p>010-3020-1004</p>
+			    <!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none">
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>이연희</em>
+				<p>010-3020-1004</p>
+			    <!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none">
+			</li>
+
+			<!-- 고객 목록 -->
+		    <li class="divider" data-role="list-divider">고객 목록</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>강현창</em>
+				<p>010-3020-1004</p>
+			    <!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none">
+			</li>
+		</ul>
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

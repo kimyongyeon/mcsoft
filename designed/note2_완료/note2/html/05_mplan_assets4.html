@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+    <!-- header -->
+    <div data-role="header" data-position="fixed" class="header">
+        <h1>소득</h1>
+        <button type="button" class="btn_reset">취소</button>
+        <button type="button" class="btn_submit">저장</button>
+    </div>
+    <!-- /header -->
+
+    <!-- content -->
+    <div class="mp_inp">
+        <h2 class="tit5">소득1</h2>
+        <button type="button" class="btn_del">삭제</button>
+        <dl>
+            <dt>소득종류</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">근로/사업</option>
+                    <option value="">근로소득</option>
+                    <option value="">사업소득</option>
+                </select>
+            </dd>
+            <dt>소득출처</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">선택</option>
+                    <option value="">본인</option>
+                    <option value="">배우자</option>
+                    <option value="">기타</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>월급(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>상여금<br>(만원)</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <dl>
+            <dt>국민건강<br>보험(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>국민연금<br>(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>퇴직연금<br>(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>소득세(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>연봉(만원)</dt>
+            <dd><input type="text"></dd>
+            <dt>&nbsp;</dt>
+            <dd>&nbsp;</dd>
+        </dl>
+    </div>
+
+    <div class="mp_inp">
+        <h2 class="tit5">소득2</h2>
+        <button type="button" class="btn_add">추가</button>
+        <dl>
+            <dt>소득종류</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">근로/사업</option>
+                    <option value="">근로소득</option>
+                    <option value="">사업소득</option>
+                </select>
+            </dd>
+            <dt>소득출처</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">선택</option>
+                    <option value="">본인</option>
+                    <option value="">배우자</option>
+                    <option value="">기타</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>월급(만원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>상여금<br>(만원)</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <dl>
+            <dt>국민건강<br>보험(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>국민연금<br>(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>퇴직연금<br>(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>소득세(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>연봉(만원)</dt>
+            <dd><input type="text"></dd>
+            <dt>&nbsp;</dt>
+            <dd>&nbsp;</dd>
+        </dl>
+    </div>
+
+    <!-- 안내문은 추가입력시 사라짐 -->
+    <p class="box_txt" style="display:none">소득을 추가할 때는 <button type="button" class="btn_add"></button> 를 클릭해주세요.<br>만원 단위와 원 단위 표시를 주의해 입력해주세요!</p>
+    <!-- /content -->
+</div>
+
+</body>
+</html>

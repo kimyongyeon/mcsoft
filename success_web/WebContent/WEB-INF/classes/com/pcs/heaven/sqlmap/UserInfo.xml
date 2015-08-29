@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserInfo">
+	<select id="getLoginUserInfoExist" parameterType="java.util.HashMap"
+		resultType="Integer">
+		select count(user_id)
+		from tb_user_info
+		where user_id = #{user_id}
+		and user_pw = #{user_pw}
+	</select>
+	
+	<select id="getLoginUserInfo" parameterType="java.util.HashMap"
+		resultType="com.pcs.heaven.Common.Session.UserSession">
+		select user_section,
+				 user_id,
+				 user_pw,
+				 user_nm,
+				 user_zipcode,
+				 user_addr,
+				 user_addr_ex,
+				 user_hp,
+				 user_tel,
+				 user_office,
+				 user_sub_office,
+				 user_lastlogin,
+				 user_imei,
+				 user_registernum
+		  from tb_user_info a
+		where a.user_id = #{user_id}
+		   and a.user_pw = #{user_pw}
+		   and a.user_section = #{user_section}
+	</select>
+
+	<select id="getMobileUserInfo" parameterType="java.util.HashMap"
+		resultType="com.pcs.heaven.Common.Session.UserSession">
+		select user_section,
+				 user_id,
+				 user_pw,
+				 user_nm,
+				 user_zipcode,
+				 user_addr,
+				 user_addr_ex,
+				 user_hp,
+				 user_tel,
+				 user_office,
+                 c.middle_nm user_office_nm,
+				 user_sub_office,
+				 user_lastlogin,
+				 user_imei,
+				 user_registernum
+		  from tb_user_info a,
+               tb_common_cd_main b, 
+               tb_common_cd_middle c
+		where a.user_id = #{user_id}
+		   and a.user_pw = #{user_pw}
+		   and a.user_section = #{user_section}
+		   and a.user_office = c.middle_cd
+           and b.main_cd = c.main_cd
+           and b.main_cd = #{main_cd}
+	</select>
+
+	<select id="getUserIdCheck" parameterType="java.util.HashMap"
+		resultType="Integer">
+		select count(user_id)
+		from tb_user_info
+		where user_id = #{user_id}
+	</select>
+
+	
+	<insert id="insertIntoTbUserLoginInfo" parameterType="java.util.HashMap">
+		insert into tb_user_login_log (user_section, user_id, login_date) values (#{user_section}, #{user_id}, sysdate())		
+	</insert>
+	
+	<insert id="insertIntoTbUser" parameterType="java.util.HashMap">
+		insert into tb_user_info(user_section,user_id,user_pw,user_nm,user_zipcode,user_addr,user_addr_ex,user_hp,user_tel,user_office,user_sub_office,user_lastlogin,user_imei,user_registernum)
+		values(#{user_section}, #{user_id}, #{user_pw}, #{user_nm}, #{user_zipcode}, #{user_addr}, #{user_addr_ex}, #{user_hp}, #{user_tel}, #{user_office}, #{user_sub_office}, #{user_lastlogin}, #{user_imei}, #{user_registernum})	
+	</insert>
+	
+	<update id="updateInfoTbUserPw" parameterType="java.util.HashMap">
+	    update tb_user_info set user_pw = #{user_pw}
+	     where user_id = #{user_id}
+	        and user_section = #{user_section}
+	</update>
+	    
+	    
+</mapper>

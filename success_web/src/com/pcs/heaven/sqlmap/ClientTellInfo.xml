@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientTellInfo">
+	
+    <select id="getUserForClientTellList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 tell_seq,
+				 ifnull(tell_section, '') tell_section, 
+				 ifnull(tell_address, '') tell_address
+          from tb_client_tell
+         where main_seq = #{main_seq}
+         order by tell_seq desc
+    </select>
+	
+	<insert id="insertIntoClientTellInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_tell (
+		                                        main_seq,												
+												tell_section,
+												tell_address
+												)
+									VALUES (
+												#{main_seq} ,												
+												#{tell_section} ,
+												#{tell_address}
+											   )
+	</insert>
+	
+	<delete id="deleteIntoClientTellInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_tell
+		where main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>

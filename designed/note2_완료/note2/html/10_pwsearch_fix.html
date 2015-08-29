@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" class="header">
+	    <h1>비밀번호 찾기</h1>
+	    <button type="button" class="btn_close">닫기</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div class="pwsearch_fix">
+		<h2>비밀번호 재설정</h2>
+		<div>
+			<p class="txt_info">새로운 비밀 번호를 입력해 주세요.</p>
+
+			<p class="txt_id">아이디 : <span>9comets@naver.com</span></p>
+			<div><input type="password" data-clear-btn="true" placeholder="새 비밀번호"></div>
+			<div class="mt5"><input type="password" data-clear-btn="true" placeholder="비밀번호 확인"></div>
+			<p class="txt_emph">비밀번호가 서로 일치 하지 않습니다.</p>
+			<p class="bul_txt">영문,숫자,특수문자 포함 8자이상 16자 이하</p>
+
+			<button type="button" class="btn_pwsearch">확인</button>
+		</div>
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

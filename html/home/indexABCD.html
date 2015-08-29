@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"	name="viewport">
+  <title>Index[pcs]</title>              
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="index_page_old">
+    <div data-theme="a" data-role="header">
+        <h3>
+            Hello~ pcs world
+        </h3>
+    </div>
+    
+    <div data-role="content">
+    	<ul data-role="listview">
+		    <li><a  id="link6" href="javascript:doRequestCallback();">javascript</a></li>
+		</ul>
+    </div>
+    
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <h3>
+            Footer
+        </h3>
+    </div>
+</div>
+</body>
+</html>
+
+
+<script>
+function doRequestCallback() {
+	alert(1);
+	var sendData = {
+			"userName" : "fox76",
+			"userList" : "abcd"
+	};
+	//window.pcsandroid.jsonObjectTest(JSON.stringify(sendData));
+	window.pcsandroid.pcsRequest("http://220.123.134.148:8080/PCS_MOBILE", "PCS_SAMPLE_TRCODE", JSON.stringify(sendData), "doRequestCallback"); 
+	/* alert(trcode);
+	alert(callback);
+	alert(data); */
+}
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>고객목록</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<script src="../../lib/js/header.js" type="text/javascript"></script>      
+</head>
+<body>
+
+<div data-role="page"  id="client_list_page">
+	
+	
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+		<div style="display:block">
+		    <h1>고객카드</h1>
+		    <button type="button" class="_main_home btn_home">홈</button>
+		    <button type="button" class="_client_add btn_nav_add">고객 추가</button>
+		    <button type="button" class="_client_del btn_nav_del">고객 삭제</button>
+		</div>
+		<!-- 고객 삭제 -->
+	    <div style="display:none">
+		    <h1>고객 삭제</h1>
+		    <button type="button" class="btn_reset">취소</button>
+		    <button type="button" class="btn_submit">삭제</button>
+	    </div>
+	</div>
+	<!-- /header -->
+
+		
+	<!-- content -->
+	<div>
+		
+	
+		<ul class="list cus_list" data-role="listview">
+			<input placeholder="..이름(초성), 전화번호 검색.." class="_client_search">
+			<!-- 새로운 고객 -->
+		    <li class="divider" data-role="list-divider">새로운 고객</li>
+		  	<li style="display:none;"></li>
+		    <div class="_client_list_new" ></div>
+			
+
+			<!-- 황금노트 고객 -->
+		    <li class="divider" data-role="list-divider">황금노트 고객</li>
+		    <li style="display:none;"></li>
+		    <div class="_client_list_gold"></div>
+		    
+
+			<!-- 고객 목록 -->
+		    <li class="divider" data-role="list-divider">고객 목록</li>
+		    <li style="display:none;"></li>
+		    <div class="_client_list_reg"></div>
+			
+		</ul>
+	</div>
+	<!-- /content -->
+
+	<!--  신규고객 탬플릿 -->
+		<ul class="mcsoft-template" id="_client_list_new_template">
+			<li class="_new_list_item">
+				<a class="_client_click_id" href="#">
+					<img src="../../img/ico_cus1.png" alt="미분류" class="_client_img">
+					<em  class="_client_name">김연아</em>
+					<p  class="_client_tel">010-3020-1004</p>
+				</a>
+				<button type="button" class="btn_hot" style="display:none">핫 버튼</button>
+				<!-- 고객 삭제 -->
+				<input type="checkbox" data-role="none" name="chkNewList" class="_new_client_chk">
+			</li>
+		</ul>
+	<script src="app_js/client_list.js"></script>
+</div>
+
+</body>
+</html>

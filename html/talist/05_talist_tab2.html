@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>TA List</h1>
+	    <button type="button" class="btn_home">홈</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab3">
+		<li><button type="button">추천 고객 목록</button></li>
+		<li class="active"><button type="button">등록 고객 목록</button></li>
+		<li><button type="button">Hot List</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<div class="talist">
+		<div class="bar_date">
+			<div>
+				<h2>2013.11.29 (금)</h2>
+				<button type="button" class="btn_prev">이전</button>
+				<button type="button" class="btn_next">다음</button>
+			</div>
+			<button type="button" class="btn1">오늘</button>
+		</div>
+		<ul class="list hot_list">
+			<!-- 황금노트 고객 -->
+		    <li class="divider">황금노트 고객</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>강현창</em>
+				<p>2013.12.02 (월)<span class="sales2">AP</span></p>
+				<img src="../img/ico_smiley1.png" alt="">
+				<button type="button" class="btn5">피드백</button>
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>고길동</em>
+				<p>2013.11.05 (수)<span class="sales2">AP</span></p>
+				<img src="../img/ico_smiley2.png" alt="">
+				<button type="button" class="btn5">피드백</button>
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>고준희</em>
+				<p>2013.11.05 (수)<span class="sales2">AP</span></p>
+				<img src="../img/ico_smiley3.png" alt="">
+				<button type="button" class="btn4">변경</button>
+			</li>
+
+			<!-- 생일 고객 -->
+		    <li class="divider">생일 고객</li>
+		    <li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>김연아</em>
+				<p>2013.12.02 (월)<span class="sales1">TA</span></p>
+				<button type="button" class="btn5">피드백</button>
+			</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>이연희</em>
+				<p>2013.12.02 (월)<span class="sales1">TA</span></p>
+				<button type="button" class="btn5">피드백</button>
+			</li>
+
+			<!-- 일반 고객 -->
+		    <li class="divider">일반 고객</li>
+			<li>
+				<img src="../img/ico_cus_m1.png" alt="미분류">
+				<em>하연수</em>
+				<p>2013.12.02 (월)<span class="sales1">TA</span></p>
+				<button type="button" class="btn5">피드백</button>
+			</li>
+		</ul>
+	</div>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:block">
+		<!-- 다음일정 있음 : class="pop_feed feed1" -->
+		<!-- 다음일정 없음 : class="pop_feed feed2" -->
+		<div class="pop_feed feed1">
+			<h6><span>고길동</span>님의 TA 피드백</h6>
+			<ul>
+				<li class="hbox jc">
+					<label for="" class="char">피드백</label>
+					<select name="" data-role="none" class="flex">
+						<option value="">성공</option>
+						<option value="">재시도</option>
+					</select>
+				</li>
+				<li class="hbox jc">
+					<label for="" class="char">다음일정</label>
+					<select name="" data-role="none" class="flex">
+						<option value="">있음</option>
+						<option value="">없음</option>
+					</select>
+				</li>
+			</ul>
+			<section>
+				<div class="sales_box">
+					<div class="sales_img"><img src="../img/ico_sales3.png" alt="고객 정보 수집"></div>
+					<select name="" data-role="none" class="mb5">
+						<option value="">고객 분류</option>
+						<option value="">잠재 고객</option>
+						<option value="">가망 고객</option>
+						<option value="">유망 고객</option>
+						<option value="">신규 고객</option>
+						<option value="">재구매 고객</option>
+						<option value="">고객 전도사</option>
+						<option value="">비고객</option>
+					</select>
+					<div class="hbox mb5">
+						<div class="flex"><input type="text" value="2012.02.27"></div>
+						<div class="w40 ml5"><input type="text" value="13:30"></div>
+					</div>
+				</div>
+				<div class="mb5"><input type="text" data-clear-btn="true" placeholder="약속 장소"></div>
+				<div class="mb5"><input type="text" data-clear-btn="true" placeholder="상세주소를 입력하세요"></div>
+				<textarea name="" id="" rows="4" data-role="none" placeholder="메모"></textarea>
+			</section>
+			<div class="btn_box">
+				<button type="button" class="btn2">취소</button>
+				<button type="button" class="btn1">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_sales">
+			<h6>세일즈 프로세스</h6>
+			<ul>
+				<li>전화 접근</li>
+				<li>초회 면담</li>
+				<li>고객 정보 수집</li>
+				<li>프리젠테이션</li>
+				<li>계약</li>
+				<li>증권 전달</li>
+				<li>소개</li>
+				<li>서비스</li>
+			</ul>
+		</div>
+	</div>
+	<!-- popup -->
+</div>
+
+</body>
+</html>

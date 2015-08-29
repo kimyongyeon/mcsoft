@@ -1,0 +1,25 @@
+common.js : http://115.68.20.148:8080/MCSOFT_MOBILE
+관리자 http://115.68.20.148:8080/User/UserLogin.do
+mcsoft / mcsoft1234
+
+DB 주소
+주소 : http://115.68.20.148/phpmyadmin/
+아이디 : root
+비번 : primeasset
+
+FTP 접속 주소
+주소 : sftp://115.68.20.148
+포트 : 22
+아이디 : root
+비번 : primeasset
+접속후 "/var/www/html/success/" 폴더경로로 이동
+keymaker.php - 인증키를 생성함
+success.php - 전반적인 DB와 클라이언트 통신 기능
+프로그램의 세팅은 이클립스를 사용하시고 웹프로젝트를 해보셨다면 몇십분안쪽에 
+세팅이 가능합니다. 다이나믹 웹 프로젝트로 생성을 하시거나.. 임포트 하시면 됩니다.
+ 
+테이블 스크립트는 현재구동되고 있는 서버의 스크립트를 참고하세요.
+TRCODE 역시 로그인, 아이디 중복체크 회원가입 넣어서 보내드립니다. 
+ 
+단말기에서 테스트 하기가 곤란하실 경우 브라우저에서 테스트하기위한 크롬 실행방법
+chrome.exe --disable-web-security

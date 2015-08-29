@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CalendarInfo">
+	
+
+	<select id="getList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		   select cal_fullday,
+					cal_fulldayopt,
+					cal_year,
+					cal_month,
+					cal_day,
+					cal_youl_han,
+					cal_yoil_cnt
+		  from tb_calendar
+		 where cal_year = #{cal_year}
+		    and cal_month = #{cal_month}
+		 order by cal_fullday asc
+	</select>
+
+	<select id="getNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(resource_seq), 0)+1 nextcd
+		  from tb_calendar
+	</select>
+	
+	<insert id="insertInfoResource" parameterType="java.util.HashMap">
+		insert into tb_calendar (resource_seq, resource_version, resource_org_file, resource_upload_file, title, use_yn, create_date) 
+		values (#{resource_seq}, #{resource_version}, #{resource_org_file}, #{resource_upload_file}, #{title}, #{use_yn}, sysdate())		
+	</insert>
+	    
+	<update id="updateInfoResource" parameterType="java.util.HashMap">
+		update tb_calendar set resource_version = #{resource_version},
+											<if test="resource_org_file != null and resource_org_file != ''">
+												resource_org_file = #{resource_org_file},        
+										   </if>
+										   <if test="resource_upload_file != null and resource_upload_file != ''">
+												resource_upload_file = #{resource_upload_file},        
+										   </if>
+		                                   title = #{title},
+		                                   use_yn = #{use_yn}
+          where resource_seq = #{resource_seq}
+	</update>
+	
+	<update id="deleteInfoResource" parameterType="java.util.HashMap">
+		delete from tb_calendar
+          where resource_seq = #{resource_seq}
+	</update>
+	
+	<select id="getInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select resource_seq, 
+		         resource_version,
+		         resource_org_file,
+		         resource_upload_file,
+		         title,
+		         use_yn,
+		         create_date
+		  from tb_calendar
+		where resource_seq = #{resource_seq}
+	</select>
+	
+</mapper>

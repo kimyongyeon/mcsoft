@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg_dot">
+
+<!-- header -->
+<div class="header header_login">
+	<button type="button" class="btn_menu">전체메뉴</button>
+	<button type="button" class="btn_allim1"><span>대화하기 알림</span><em>9</em></button>
+	<button type="button" class="btn_allim2"><span>응원하기 알림</span><em>3</em></button>
+	<button type="button" class="btn_set">설정</button>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div id="mySwipe" class="swipe">
+    <div class="swipe_wrap">
+        <!-- 1. -->
+        <div><b>1</b></div>
+        <!-- //1. -->
+        
+        <!-- 2. Main -->
+		<div class="main">
+			<h1>성공노트</h1>
+			<p><span>미래에셋</span>&nbsp;&nbsp;<span>강남지점</span>&nbsp;&#149;&nbsp;<span>김연하</span></p>
+
+			<ul class="main_menu">
+				<li>
+					<a href="" class="on">
+						<strong>고객카드</strong>
+						<em>12</em>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>TA List</strong>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>랭킹</strong>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>Sit Plan</strong>
+						<em>3</em>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>Post-it</strong>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>포인트 및 고객</strong>
+						<em>1</em>					
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>동선관리</strong>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>CRM</strong>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<strong>성과분석</strong>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2. Main -->
+		
+		<!-- 3. -->
+        <div><b>3</b></div>
+		<!-- //3. -->
+    </div>
+</div>
+<ul id="myIndicator" class="indicator">
+    <li><span>1</span></li>
+    <li class="on"><span>2</span></li>
+    <li><span>3</span></li>
+</ul>
+<p class="copyright"><small>2014 &copy; MC Soft</small></p>
+<!-- /content -->
+
+<!-- script -->
+<script src="../js/swipe.js"></script>
+<script>
+var bullets = document.getElementById('myIndicator').getElementsByTagName('li');
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+    startSlide: 1,
+    speed: 400,
+    continuous: false,
+    disableScroll: false,
+    stopPropagation: false,
+    callback: function(pos) {
+    	var i = bullets.length;
+    	while (i--) {
+    		bullets[i].className = ' ';
+      	}
+      	bullets[pos].className = 'on';
+    },
+    transitionEnd: function(index, elem) {}
+});
+</script>
+
+</body>
+</html>

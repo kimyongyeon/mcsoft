@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<!-- 메모만 표시될 때 : data-position="fixed" 추가 -->
+	<!-- 메모+@ 표시될 때 : data-position="fixed" 삭제 -->
+	<div data-role="header" data-position="fixed" class="header">
+		<div style="display:block">
+		    <h1>성과분석</h1>
+		    <button type="button" class="btn_home">홈</button>
+		    <button type="button" class="btn_aim">목표</button>
+		</div>
+		<div style="display:none">
+		    <h1>비전 설정 편집</h1>
+		    <button type="button" class="btn_reset">취소</button>
+		    <button type="button" class="btn_submit">저장</button>
+		</div>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab4">
+		<li class="active"><button type="button">비전 설정</button></li>
+		<li><button type="button">연간 계획</button></li>
+		<li><button type="button">월간 분석</button></li>
+		<li><button type="button">주간 분석</button></li>
+	</ul>
+	<!-- /tab -->
+	
+	<!-- content -->
+	<div class="analysis">
+		<h3 class="tit_analysis">나의 사명과 비전</h3>
+		<!-- 사진 -->
+		<div class="imgbox" style="display:block">
+			<img src="../img/img8.png" alt="사진">
+			<button type="button"></button>
+		</div>
+
+		<!-- 메모만 표시될 때 : class="memoinp memofix3" -->
+		<!-- 메모+@ 표시될 때 : class="memoinp" -->
+		<div class="memoinp">
+			<div class="memo memo1">
+				<textarea rows="9" data-role="none"></textarea>
+				<button type="button" class="btn_photo"></button>
+				<ul class="hbox">
+					<li>
+						<img src="../img/img1.png" alt="썸네일">
+						<button type="button">삭제</button>
+					</li>
+					<li>
+						<img src="../img/img1.png" alt="썸네일">
+						<button type="button">삭제</button>
+					</li>
+					<li>
+						<img src="../img/img1.png" alt="썸네일">
+						<button type="button">삭제</button>
+					</li>
+					<li>
+						<img src="../img/img1.png" alt="썸네일">
+						<button type="button">삭제</button>
+					</li>
+					<li>
+						<img src="../img/img1.png" alt="썸네일">
+						<button type="button">삭제</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 3가지 목표 -->
+		<h3 class="tit_analysis">2014년 꼭 이루고 싶은 3가지</h3>
+		<div class="aimbox">
+			<strong>1. 월 소득 1,000만원 돌파<button type="button">3가지 목표 편집</button></strong>
+			<ul class="bul_list">
+				<li>점심식사는 고객과 반드시 함께 한다.</li>
+				<li>일일 TA 5건 이상 실행</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_photo">
+			<h6>사진 추가<button type="button" class="">닫기</button></h6>
+			<ul>
+				<li>사진 찍기</li>
+				<li>사진 앨범(한 장 올리기)</li>
+				<li>사진 앨범(여러장 올리기)</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_plan2">
+			<!-- 등록 -->
+			<h6 style="display:block">2014년 목표 등록</h6>
+			<!-- 편집 -->
+			<h6 class="edit" style="display:none">2014년 목표 등록 편집<button type="button" class="btn4">삭제</button></h6>
+			<section>
+				<div class="hbox jc">
+					<div class="flex mr10"><div><input type="text" placeholder="목표를 등록하세요."></div></div>
+					<button type="button" class="btn_add">추가</button>
+				</div>
+				<div class="hbox jc mt5">
+					<div class="flex mr10"><div><input type="text" placeholder="목표를 위한 구체적 실천을 입력하세요."></div></div>
+					<button type="button" class="btn_del">삭제</button>
+				</div>
+				<div class="hbox jc mt5">
+					<div class="flex mr10"><div><input type="text" placeholder="목표를 위한 구체적 실천을 입력하세요."></div></div>
+					<button type="button" class="btn_del">삭제</button>
+				</div>
+			</section>
+			<div class="btn_box">
+				<!-- 등록 -->
+				<p style="display:block">목표와 구체적 실천은 3개까지 등록가능하며 목표가 일정 분류 선택 팝업에 표시됩니다.</p>
+				<button type="button" class="btn2">취소</button>
+				<button type="button" class="btn1">등록</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_plan3">
+			<h6 class="edit">2014년 꼭 이루고 싶은 3가지<button type="button" class="btn4">편집</button></h6>
+			<strong>1. 월 소득 1,000만원 돌파</strong>
+			<ul>
+				<li>
+					<label for="r11">점심식사는 고객과 반드시 함께 한다. 점심식사는 고객과 반드시 함께 한다.</label>
+					<input type="radio" name="r10" id="r11" data-role="none">
+				</li>
+				<li>
+					<label for="r12">일일 TA 5건 이상 실행</label>
+					<input type="radio" name="r10" id="r12" data-role="none">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

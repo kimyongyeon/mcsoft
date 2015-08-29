@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientIncomeInfo">
+	
+    <select id="getUserForClientIncomeList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 income_seq,
+				 ifnull(income_gb, '') income_gb, 
+				 ifnull(income_name, '') income_name,
+				 ifnull(income_mount, '') income_mount
+          from tb_client_income
+         where main_seq = #{main_seq}
+           and income_gb = #{income_gb}
+         order by income_seq asc
+    </select>
+	
+	<insert id="insertIntoClientIncomeInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_income (
+		                                        main_seq,												
+												income_gb,
+												income_name,
+												income_mount
+												)
+									VALUES (
+												#{main_seq} ,												
+												#{income_gb} ,
+												#{income_name},
+												#{income_mount}
+											   )
+	</insert>
+	
+	<delete id="deleteIntoClientIncomeInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_income
+		where main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body class="bg_dot">
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+		<div style="display:block">
+		    <h1>Post-it</h1>
+	   		<button type="button" class="btn_home">홈</button>
+			<button type="button" class="btn_nav_add">메모 추가</button>
+			<button type="button" class="btn_nav_del">메모 삭제</button>
+		</div>
+		<!-- 메모 삭제 -->
+		<div style="display:none">
+		    <h1>메모 삭제</h1>
+		    <button type="button" class="btn_reset">취소</button>
+		    <button type="button" class="btn_submit">삭제</button>
+		</div>
+	</div>
+	<!-- /header -->
+	
+	<!-- content -->
+	<ul class="post_list" data-filter="true" data-filter-placeholder="이름(초성) 검색">
+		<!-- 일반 메모 -->
+		<li class="post1">
+			<img src="../img/ico_post1.png" alt="일반 메모" class="ico_post">
+			<p class="ellipsis2">메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용</p>
+			<span>날짜 및 시간</span>
+			<img src="../img/ico_star.png" alt="메모 중요도" class="ico_star">
+			<!-- 메모 삭제 -->
+			<input type="checkbox" data-role="none" style="display:none">
+		</li>
+		<!-- 고객 메모 -->
+		<li class="post2">
+			<img src="../img/ico_post2.png" alt="고객 메모" class="ico_post">
+			<em>고객명</em>
+			<p class="ellipsis">메모내용메모내용메모내용메모내용메모내용메모내용메모내용메모내용</p>
+			<span>2013.12.05 (목) 11:00</span>
+			<img src="../img/ico_star_on.png" alt="메모 중요도" class="ico_star">
+			<!-- 메모 삭제 -->
+			<input type="checkbox" data-role="none" style="display:none">
+		</li>
+	</ul>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

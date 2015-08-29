@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- The definition of the Root Spring Container shared by all Servlets 
+		and Filters -->
+	<!-- //서버 실행시 불러올 파일들 // -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<!-- ContextLoaderListener와 DispatcherServlet은 각각 WebApplicationContext 
+		인스턴스를 생성하게 된다. -->
+
+	<!-- ContextLoaderListener가 생성한 Context가 root가 되고 DispatcherServlet 이 생성한 
+		인스턴스가 root context를 부모로 사용하는 자식 Context가 된다. 이때 자식 Context들은 root Context가 
+		제공하는 빈을 사용할 수 있기 때문에 ContextLoaderListener를 이용하여 공통 빈을 설정하는 것이다. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<!-- url요청이 발생하면 DispatcherServlet이 처리하도록 설정 -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- /로 설정함으로서 /이하 모든 url을 매핑시키겠단 뜻. -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- CharacterEncodingFilter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name><!-- encoding을 UTF-8로 설정하겠단 뜻 -->
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern><!-- 모든 URL에 이 인코딩 필터를 적용하겠단 뜻 -->
+	</filter-mapping>
+
+	<!-- mybitis 연동관련 -->
+	<!-- <context-param> <param-name>mybatisConfigLocation</param-name> <param-value>/WEB-INF/mybatis/mybatis-context.xml</param-value> 
+		</context-param> -->
+</web-app>

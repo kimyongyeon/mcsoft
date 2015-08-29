@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>일정 등록</h1>
+    	<button type="button" class="btn_reset">취소</button>
+	    <button type="button" class="btn_submit">삭제</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs2 fixed">
+		<li class="active"><button type="button">고객 일정</button></li>
+		<li><button type="button">개인 일정</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<ul class="plan_add">
+		<li class="plan_form">
+			<div><img src="../img/ico_sales2.png" alt=""></div>
+			<dl class="hbox jc">
+				<dt class="char">고객명</dt>
+				<dd class="flex"><input type="text" data-clear-btn="true"></dd>
+			</dl>
+			<dl class="hbox jc">
+				<dt class="char">고객 분류</dt>
+				<dd class="flex">
+					<select name="" id="" data-role="none">
+						<option value="">미분류</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="hbox jc">
+				<div class="flex"><input type="tel" value="2013.12.11" class="tc"></div>
+				<div class="flex ml5"><input type="tel" value="13:10" class="tc"></div>
+			</div>
+			<div class="mt5"><input type="text" placeholder="장소" data-clear-btn="true"></div>
+			<div class="mt5"><input type="text" placeholder="상세주소를 입력하세요" data-clear-btn="true"></div>
+		</li>
+		<li>
+			<textarea name="" id="" rows="10" placeholder="메모" data-role="none"></textarea>
+		</li>
+	</ul>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

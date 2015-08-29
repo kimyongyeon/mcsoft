@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>일정 등록</h1>
+    	<button type="button" class="btn_reset">취소</button>
+	    <button type="button" class="btn_submit">삭제</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs2 fixed">
+		<li><button type="button">고객 일정</button></li>
+		<li class="active"><button type="button">개인 일정</button></li>
+	</ul>
+	<!-- /tab -->
+
+	<!-- content -->
+	<ul class="plan_add">
+		<li>
+			<dl class="hbox jc">
+				<dt class="char">일정 이름</dt>
+				<dd class="flex"><input type="text" data-clear-btn="true"></dd>
+			</dl>
+			<dl class="hbox jc mt5">
+				<dt class="char">일정 분류</dt>
+				<dd class="flex">
+					<select name="" id="" data-role="none">
+						<option value="">기타</option>
+						<option value="">세미나</option>
+						<option value="">운동</option>
+						<option value="">학습</option>
+						<option value="">회의</option>
+						<option value="">RP</option>
+						<option value="">TA</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="hbox jc">
+				<div class="flex"><input type="tel" value="2013.12.11" class="tc"></div>
+				<div class="flex ml5"><input type="tel" value="13:10" class="tc"></div>
+			</div>
+			<dl class="hbox jc mt5">
+				<dt class="char">반복</dt>
+				<dd class="flex">
+					<select name="" id="" data-role="none">
+						<option value="">없음</option>
+						<option value="">매일</option>
+						<option value="">매주 월-금</option>
+						<option value="">매주</option>
+						<option value="">매월</option>
+						<option value="">매년</option>
+					</select>
+				</dd>
+			</dl>
+
+			<!-- 매주 월~금 선택시 -->
+			<div style="display:block">
+				<div class="repeat1">
+					<button type="button">월</button>
+					<button type="button">화</button>
+					<button type="button" class="active">수</button>
+					<button type="button" class="active">목</button>
+					<button type="button">금</button>
+				</div>
+			</div>
+			
+			<!-- 그 외 선택시 -->
+			<div style="display:block">
+				<div class="repeat2">
+					<label for="" class="char">반복 종료일 설정</label>
+					<input type="checkbox" data-role="none">
+					<!-- 반복 종료일 설정 선택 시 -->
+					<div style="display:block"><input type="text" value="2014.01.11 토요일" class="tc"></div>
+					<!-- 반복 종료일 설정 선택 해제시 -->
+					<p style="display:block">반복 설정이 무한 반복 됩니다.</p>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<div><input type="text" placeholder="장소" data-clear-btn="true"></div>
+			<div class="mt5"><input type="text" placeholder="상세주소를 입력하세요" data-clear-btn="true"></div>
+		</li>
+		<li>
+			<textarea name="" id="" rows="10" data-role="none" placeholder="메모"></textarea>
+		</li>
+	</ul>
+	<!-- /content -->
+
+	<!-- popup -->
+	<div class="popup" style="display:block">
+		<div class="pop_plan1">
+			<h6>일정 분류 선택</h6>
+			<ul>
+				<li>
+					<label for="r01">세미나</label>
+					<input type="radio" name="r00" id="r01" data-role="none">
+				</li>
+				<li>
+					<label for="r02">운동</label>
+					<input type="radio" name="r00" id="r02" data-role="none">
+				</li>
+				<li>
+					<label for="r03">학습</label>
+					<input type="radio" name="r00" id="r03" data-role="none">
+				</li>
+				<li>
+					<label for="r04">회의</label>
+					<input type="radio" name="r00" id="r04" data-role="none">
+				</li>
+				<li>
+					<label for="r05">RP</label>
+					<input type="radio" name="r00" id="r05" data-role="none">
+				</li>
+				<li>
+					<label for="r06">TA</label>
+					<input type="radio" name="r00" id="r06" data-role="none">
+				</li>
+			</ul>
+			<div>
+				<p>2014년 꼭 이루고 싶은 3가지</p>
+				<button type="button" class="btn_add">추가</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_plan2">
+			<!-- 등록 -->
+			<h6 style="display:block">2014년 목표 등록</h6>
+			<!-- 편집 -->
+			<h6 class="edit" style="display:none">2014년 목표 등록 편집<button type="button" class="btn4">삭제</button></h6>
+			<section>
+				<div class="hbox jc">
+					<div class="flex mr10"><input type="text" placeholder="목표를 등록하세요."></div>
+					<button type="button" class="btn_add">추가</button>
+				</div>
+				<div class="hbox jc mt5">
+					<div class="flex mr10"><input type="text" placeholder="목표를 위한 구체적 실천을 입력하세요."></div>
+					<button type="button" class="btn_del">삭제</button>
+				</div>
+				<div class="hbox jc mt5">
+					<div class="flex mr10"><input type="text" placeholder="목표를 위한 구체적 실천을 입력하세요."></div>
+					<button type="button" class="btn_del">삭제</button>
+				</div>
+			</section>
+			<div class="btn_box">
+				<!-- 등록 -->
+				<p style="display:block">목표와 구체적 실천은 3개까지 등록가능하며 목표가 일정 분류 선택 팝업에 표시됩니다.</p>
+				<button type="button" class="btn2">아니요</button>
+				<button type="button" class="btn1">예</button>
+			</div>
+		</div>
+	</div>
+	<!-- /popup -->
+
+	<!-- popup -->
+	<div class="popup" style="display:none">
+		<div class="pop_plan3">
+			<h6 class="edit">2014년 꼭 이루고 싶은 3가지<button type="button" class="btn4">편집</ㄴbutton></h6>
+			<strong>1. 월 소득 1,000만원 돌파</strong>
+			<ul>
+				<li>
+					<label for="r11">점심식사는 고객과 반드시 함께 한다. 점심식사는 고객과 반드시 함께 한다.</label>
+					<input type="radio" name="r10" id="r11" data-role="none">
+				</li>
+				<li>
+					<label for="r12">일일 TA 5건 이상 실행</label>
+					<input type="radio" name="r10" id="r12" data-role="none">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /popup -->
+</div>
+
+</body>
+</html>

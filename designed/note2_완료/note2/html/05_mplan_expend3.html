@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+    <!-- header -->
+    <div data-role="header" data-position="fixed" class="header">
+        <h1>고정지출</h1>
+        <button type="button" class="btn_reset">취소</button>
+        <button type="button" class="btn_submit">저장</button>
+    </div>
+    <!-- /header -->
+
+    <!-- content -->
+    <div class="mp_inp">
+        <h2 class="tit5">고정지출</h2>
+        <dl>
+            <dt>소득세(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>국민연금<br>(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+        <dl>
+            <dt>이자및대출<br>상환(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>국민건강<br>보험(원)</dt>
+            <dd><input type="tel"></dd>
+        </dl>
+    </div>
+
+    <div class="mp_inp">
+        <h2 class="tit5">보장성보험1</h2>
+        <button type="button" class="btn_add">추가</button>
+        <dl>
+            <dt>보험명</dt>
+            <dd><input type="text"></dd>
+            <dt>피보험자</dt>
+            <dd>
+                <select name="" id="" data-role="none">
+                    <option value="">선택</option>
+                    <option value="">본인&gt;홍길동</option>
+                    <option value="">배우자&gt;김심청</option>
+                    <option value="">자녀1&gt;홍첫째</option>
+                    <option value="">자녀2&gt;홍막내</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>월보험료<br>(원)</dt>
+            <dd><input type="tel"></dd>
+            <dt>보험사</dt>
+            <dd><input type="text"></dd>
+        </dl>
+    </div>
+
+    <!-- 안내문은 추가입력시 사라짐 -->
+    <p class="box_txt" style="display:block">보장성보험을 추가할 때는 <button type="button" class="btn_add"></button> 를 클릭해주세요.<br>보험명과 보험사는 5자 이내로 입력해주세요!</p>
+    <!-- /content -->
+</div>
+
+</body>
+</html>

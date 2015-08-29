@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientPropertyInfo">
+	
+    <select id="getUserForClientPropertyList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 property_seq,
+				 ifnull(property_gb, '') property_gb, 
+				 ifnull(property_name, '') property_name,
+				 ifnull(property_mount, '') property_mount
+          from tb_client_Property
+         where main_seq = #{main_seq}
+           and property_gb = #{property_gb}
+         order by property_seq asc
+    </select>
+	
+	<insert id="insertIntoClientPropertyInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_Property (
+		                                        main_seq,												
+												property_gb,
+												property_name,
+												property_mount
+												)
+									VALUES (
+												#{main_seq} ,												
+												#{property_gb} ,
+												#{property_name},
+												#{property_mount}
+											   )
+	</insert>
+	
+	<delete id="deleteIntoClientPropertyInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_Property
+		where main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>

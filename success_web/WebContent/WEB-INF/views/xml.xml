@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Message>
+  <ReturnSet>
+    <ReturnCode>0</ReturnCode>
+    <ReturnMessage>PASS</ReturnMessage>
+  </ReturnSet>
+  <DataLayer>
+    <IF_NAME>IF_NAME_TEST</IF_NAME>
+    <IF_ID>IF_QSM_APPROVE_LIST_CH</IF_ID>
+    <ITEM_LIST>
+      <ITEM>
+        <CODEID>COM-057</CODEID>
+        <SITE>DG2</SITE>
+        <SITELINE>FACTORY1</SITELINE>
+        <STEP>COM</STEP>
+        <EQUIP>RP</EQUIP>
+        <INSPECTTIME>20140624</INSPECTTIME>
+        <FREQUENCYTYPE>D</FREQUENCYTYPE>
+        <INSPECTOBJECT>MES</INSPECTOBJECT>
+        <INSPECTLIST>INSPECTLIST TEST</INSPECTLIST>
+        <CHECKDATE>20140624</CHECKDATE>
+        <RUNSTATUS>RUNSTATUS TEST</RUNSTATUS>
+        <INSPECTUSER>INSPECTUSER TEST</INSPECTUSER>
+        <OPERID>OPERID TEST</OPERID>
+        <PERSON>PERSON TEST</PERSON>
+      </ITEM>
+    </ITEM_LIST>
+    <CUR_PAGE>1</CUR_PAGE>
+    <TOTAL_PAGE>1</TOTAL_PAGE>
+  </DataLayer>
+</Message>

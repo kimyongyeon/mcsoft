@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- header -->
+<div class="header">
+    <h1>부자지수</h1>
+    <button type="button" class="btn_back">이전</button>
+    <button type="button" class="btn_text">다음단계</button>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div class="richindex mp_swipe">
+    <div id="mySwipe" class="swipe">
+        <div>
+            <!-- 1. 부자지수 -->
+            <div class="rich_rating">
+                <div class="r_rating">
+                    <div>
+                        <strong>부자지수등급</strong>
+                        <p class="r_b">B</p>
+                        <ul style="display:none">
+                            <li>200점 이상 <span>A</span></li>
+                            <li>150점 이상 <span>B</span></li>
+                            <li>100점 이상 <span>C</span></li>
+                            <li>50점 이상 <span>D</span></li>
+                            <li>50점 미만 <span>E</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r_value">
+                    <ul>
+                        <li><span>20,000</span><span>자산</span></li>
+                        <li><span>3,000</span><span>부채</span></li>
+                        <li><span>8,000</span><span>연수입</span></li>
+                        <li><span>200</span><span>점수</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //1. 부자지수 -->
+
+            <!-- 2. 자산부채 상세현황 -->
+            <div>
+                <h2 class="s_tit">자산부채 상세현황</h2>
+                <table class="s_tbl">
+                    <thead>
+                        <tr>
+                            <th scope="col">내용</th>
+                            <th scope="col">분류</th>
+                            <th scope="col">금액</th>
+                            <th scope="col">증감</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">자산</td>
+                            <td>금융</td>
+                            <td>3,000</td>
+                            <td rowspan="2"><span class="growth1">증가</span></td>
+                        </tr>
+                        <tr>
+                            <td>부동산</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">부채</td>
+                            <td>신용부채</td>
+                            <td>1,500</td>
+                            <td rowspan="2"><span class="growth2">유지</span></td>
+                        </tr>
+                        <tr>
+                            <td>담보부채</td>
+                            <td>1,500</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">소득</td>
+                            <td>근로소득</td>
+                            <td>&nbsp;</td>
+                            <td rowspan="2"><span class="growth3">감소</span></td>
+                        </tr>
+                        <tr>
+                            <td>사업소득</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //2. 자산부채 상세현황 -->
+        </div>
+        <ul id="myIndicator" class="indicator">
+            <li class="on"><span>1</span></li>
+            <li><span>2</span></li>
+        </ul>
+    </div>
+    <span class="unit">단위: 만원</span>
+    <button type="button" class="btn_info">안내</button>
+    <button type="button" class="btn1">홍길동님의 부자지수 입력</button>
+</div>
+
+<div class="tit_sub">
+    <strong>자산부채 상세현황</strong>
+</div>
+<ul class="mp_link2">
+    <li>금융자산</li>
+    <li>부동산자산</li>
+    <li>부채</li>
+    <li>소득</li>
+</ul>
+<!-- /content -->
+
+<!-- popup -->
+<div class="popup" style="display:none">
+    <div class="pop_rich">
+        <h6 class="pop_tit">부자지수 입력</h6>
+        <ul class="pop_inp">
+            <li>
+                <strong>자산</strong>
+                <div><input type="tel" class="input"></div>
+                <span>만원</span>
+            </li>
+            <li>
+                <strong>부채</strong>
+                <div><input type="tel" class="input"></div>
+                <span>만원</span>
+            </li>
+            <li>
+                <strong>연수입</strong>
+                <div><input type="tel" class="input"></div>
+                <span>만원</span>
+            </li>
+        </ul>
+        <div class="pop_btn">
+            <button type="button">취소</button>
+            <button type="button">저장</button>
+        </div>
+    </div>
+</div>
+<!-- /popup -->
+
+<!-- script -->
+<script src="../js/swipe.js"></script>
+<script>
+var bullets = document.getElementById('myIndicator').getElementsByTagName('li');
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+    startSlide: 0,
+    speed: 400,
+    continuous: false,
+    disableScroll: false,
+    stopPropagation: false,
+    callback: function(pos) {
+        var i = bullets.length;
+        while (i--) {
+            bullets[i].className = ' ';
+        }
+        bullets[pos].className = 'on';
+    },
+    transitionEnd: function(index, elem) {}
+});
+</script>
+
+</body>
+</html>

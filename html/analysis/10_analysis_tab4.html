@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header">
+	    <h1>성과분석</h1>
+	    <button type="button" class="btn_home">홈</button>
+	    <button type="button" class="btn_admin">관리자 이메일 전송</button>
+	</div>
+	<!-- /header -->
+
+	<!-- tab -->
+	<ul class="tabs tab4">
+		<li><button type="button">비전 설정</button></li>
+		<li><button type="button">연간 계획</button></li>
+		<li><button type="button">월간 분석</button></li>
+		<li class="active"><button type="button">주간 분석</button></li>
+	</ul>
+	<!-- /tab -->
+	
+	<!-- content -->
+	<div class="analysis">
+		<div class="bar_date">
+			<div>
+				<h2>2014.01.06 ~ 01.12 (2주차)</h2>
+				<button type="button" class="btn_prev">이전</button>
+				<button type="button" class="btn_next">다음</button>
+			</div>
+		</div>
+		<table class="tbl">
+			<colgroup>
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+				<col style="width:auto">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col"><span class="ico_tbl4">활동 분석</span></th>
+					<th scope="col">TA</th>
+					<th scope="col">AP</th>
+					<th scope="col">FF</th>
+					<th scope="col">PT</th>
+					<th scope="col">소계</th>
+					<th scope="col">계약</th>
+					<th scope="col">금액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>목표</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>결과</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>달성율</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3 class="tit_analysis">주간 활동 리포트</h3>
+		<div class="hbox js">
+			<div class="w75">
+				<dl>
+					<dt>01.06</dt>
+					<!-- 성공 피드백 : class="fback1" -->
+					<!-- 재시도 피드백 : class="fback2" -->
+					<!-- 피드백 하지 않은 프로세스 : class="fback3" -->
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback2"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback3"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+				</dl>
+				<dl>
+					<dt>01.08</dt>
+					<dd class="fback2"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback3"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+				</dl>
+				<dl>
+					<dt>01.10</dt>
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback1"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+					<dd class="fback3"><img src="../img/ico_welldone.png" alt="참!잘했어요"></dd>
+				</dl>
+			</div>
+			<div class="w25">
+				<strong><span>140</span>점</strong>
+				<p>성공 : <span>7회</span></p>
+				<p>재시도 : <span>2회</span></p>
+				<img src="../img/ico_welldone.png" alt="참!잘했어요">
+			</div>
+		</div>
+	</div>
+	<!-- /content -->
+</div>
+
+</body>
+</html>

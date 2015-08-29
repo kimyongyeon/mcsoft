@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.2.css" />
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.2.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+	<!-- header -->
+	<div data-role="header" data-position="fixed" class="header" id="head">
+	    <h1>Sit Plan</h1>
+    	<button type="button" class="btn_home">홈</button>
+    	<!-- 주간: class="btn_week" -->
+    	<!-- 월간: class="btn_month" -->
+	    <button type="button" class="btn_month">주간/월간</button>
+	    <button type="button" class="btn_list">일정 목록</button>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div class="bar_date" id="cont">
+		<div>
+			<h2>2013.12</h2>
+			<button type="button" class="btn_prev">이전</button>
+			<button type="button" class="btn_next">다음</button>
+		</div>
+		<button type="button" class="btn1">오늘</button>
+	</div>
+	<div class="sitplan1" id="sitplan">
+		
+		<!-- Week -->
+		<div style="display:block;">
+			<table class="calender1" id="week">
+				<colgroup span="2" style="width:50%;"></colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<a href="">
+								<span>24 (월)</span>
+								<em class="sales2">홍길동</em>
+								<em class="sales3">고준희</em>
+								<em class="sales4">김연아</em>
+								<em>운동</em>
+							</a>
+						</td>
+						<td><a href=""><span>25 (화)</span></a></td>
+					</tr>
+					<tr>
+						<td><a href=""><span>26 (수)</span></a></td>
+						<td class="today">
+							<a href="">
+								<span>27 (목)</span>
+								<em class="sales5">하연수</em>
+								<em class="sales6">김태희</em>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td><a href=""><span>28 (금)</span></a></td>
+						<td class="sat">
+							<a href="">
+								<span>29 (토)</span>
+								<em>운동</em>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="hol"><a href=""><span>30 (일)</span></a></td>
+						<td class="dim"><a href=""><span>01 (월)</span></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Month -->
+		<div style="display:none">
+			<table class="calender2" id="month">
+				<colgroup span="7" style="width:14%;"></colgroup>
+				<thead>
+					<tr>
+						<th class="hol">일</th>
+						<th>월</th>
+						<th>화</th>
+						<th>수</th>
+						<th>목</th>
+						<th>금</th>
+						<th class="sat">토</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="dim hol"><a href="">26</a></td>
+						<td class="dim"><a href="">27</a></td>
+						<td class="dim"><a href="">28</a></td>
+						<td class="dim"><a href="">29</a></td>
+						<td class="dim"><a href="">30</a></td>
+						<td class="dim"><a href="">31</a></td>
+						<td class="dim sat"><a href="">1</a></td>
+					</tr>
+					<tr>
+						<td class="hol"><a href="">2</a></td>
+						<td>
+							<a href="">3
+								<em>운동</em>
+							</a>
+						</td>
+						<td><a href="">4</a></td>
+						<td class="today"><a href="">5</a></td>
+						<td><a href="">6</a></td>
+						<td><a href="">7</a></td>
+						<td class="sat"><a href="">8</a></td>
+					</tr>
+					<tr>
+						<td class="hol"><a href="">9</a></td>
+						<td><a href="">10</a></td>
+						<td>
+							<a href="">11
+								<em class="sales2">홍길동</em>
+								<em class="sales4">손연재</em>
+								<em class="sales5">회의</em>
+							</a>
+						</td>
+						<td><a href="">12</a></td>
+						<td><a href="">13</a></td>
+						<td><a href="">14</a></td>
+						<td class="sat"><a href="">15</a></td>
+					</tr>
+					<tr>
+						<td class="hol"><a href="">16</a></td>
+						<td><a href="">17</a></td>
+						<td><a href="">18</a></td>
+						<td>
+							<a href="">19
+								<em>김연아</em>
+							</a>
+						</td>
+						<td><a href="">20</a></td>
+						<td><a href="">21</a></td>
+						<td class="sat"><a href="">22</a></td>
+					</tr>
+					<tr>
+						<td class="hol"><a href="">23</a></td>
+						<td><a href="">24</a></td>
+						<td><a href="">25</a></td>
+						<td><a href="">26</a></td>
+						<td><a href="">27</a></td>
+						<td><a href="">28</a></td>
+						<td class="sat"><a href="">29</a></td>
+					</tr>
+					<tr>
+						<td class="hol"><a href="">30</a></td>
+						<td class="dim"><a href="">1</a></td>
+						<td class="dim"><a href="">2</a></td>
+						<td class="dim"><a href="">3</a></td>
+						<td class="dim"><a href="">4</a></td>
+						<td class="dim"><a href="">5</a></td>
+						<td class="dim sat"><a href="">6</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- /content -->
+</div>
+
+<!-- popup -->
+<div class="popup" style="display:block">
+	<div class="pop_plan0">
+		<h6>12.02 (월)<button type="button">닫기</button></h6>
+		<ul>
+			<li class="sales2"><span>오전 10:30</span><strong>고준희 고객 AP</strong></li>
+			<li class="sales4"><span>오전 10:30</span><strong>고준희 고객 AP</strong></li>
+			<li><span>오전 10:30</span><strong>고준희 고객 AP</strong></li>
+		</ul>
+		<p>일정을 추가하려면 여기를 누르세요.</p>
+	</div>
+</div>
+<!-- /popup -->
+
+<!-- script -->
+<script>
+sitplanHeight();
+function sitplanHeight() {
+	var pageHeight = window.innerHeight; // 실제 화면 높이
+	var headHeight = $("#head").height();
+	var contHeight = $("#cont").height();
+	var finalHeight = 0; // 최종적인 영역 높이
+	var weekHeight = 0;
+	var monthHeight = 0;
+
+	finalHeight = pageHeight - headHeight - contHeight; // 해더, 제외영역 빼는
+	weekHeight = (finalHeight - 24) / 4;
+	monthHeight = (finalHeight - 50) / 6;
+
+	$("#sitplan").height(finalHeight);
+	$("#week td").height(weekHeight);
+	$("#week td a").height(weekHeight);
+	$("#month td").height(monthHeight);
+	$("#month td a").height(monthHeight);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+$("#main_menu_page").live("pageinit", function() {
+
+    // 페이지 전역 변수 초기화 로그
+    var page = {
+        "dom" : $(this),
+        "id" : $(this).attr("id")
+    };
+
+    
+    page.model = ( function() {
+      
+        var pub = {};
+
+        pub.init = function() {
+        };
+        return pub;
+    }());
+
+    page.view = ( function() {
+            	
+    	// selector 등록
+    	var sel = {};
+    	sel.main_menu_user_name = $('._main_menu_user_name', page.dom);    	    	
+    	sel.main_menu_user_name.text(pcs.html.localStorage.get("login_info", "user_nm"));
+    	
+    	sel.user_office_name = $('._user_office_name', page.dom); 
+    	sel.user_office_name.text(pcs.html.localStorage.get("login_info", "user_office_nm"));
+    	sel.user_sub_office = $('._user_sub_office', page.dom); 
+    	sel.user_sub_office.text(pcs.html.localStorage.get("login_info", "user_sub_office"));
+    	
+    	sel.fullmenu = $('._btn_main_fullmenu', page.dom);
+    	sel.clientlist = $('._main_client_list', page.dom);        
+        
+        var pub = {};
+        // 메인메뉴 펼침 바인드
+        pub.onClickfullmenu = function(callback) {
+            sel.fullmenu.bind('click', function() {
+                callback();
+            });
+        };
+        
+        // 고객카드 바인드
+        pub.onClickclientlist = function(callback) {
+            sel.clientlist.bind('click', function() {
+                callback();
+            });
+        };
+        
+        pub.init = function() {
+        };
+        return pub;
+    }());
+
+    page.controller = ( function() {
+        var pub = {};
+
+        pub.init = function() {
+
+        	// 삭제하지 마세요.
+            page.model.init();
+            page.view.init();
+            
+            // 메인메뉴 
+            page.view.onClickfullmenu(function() {            	
+                pcs.html.startActivity("../main/main_fullmenu.html");
+            });
+            
+			// 고객카드 
+            page.view.onClickclientlist(function() {            	
+                pcs.html.startActivity("../client/client_list.html");
+            });
+            
+        };
+        return pub;
+    }());
+
+    pcs.html.setModel(page.id, page.model);
+    pcs.html.setView(page.id, page.view);
+    pcs.html.setController(page.id, page.controller);
+
+    // 페이지가 최초로 생성될 때 호출된다.
+    // 화면을 초기화 하고, 각종 이벤트 리스너를 등록하는 등의 코드를 작성한다.
+    page.dom.bind("onCreate", function() {
+        // 초기화 함수 실행
+        page.controller.init();
+        // TODO 코드 작성
+    });
+    // onCreate() 이벤트가 호출된 이후에 바로 호출된다. 두 번째 파라메터에는 prev 페이지에서 넘겨준
+    // 데이터가 저장되어 있다. 전달받은 파라메터를 처리하는 코드를 작성한다.
+    page.dom.bind("onStart", function(event, data) {
+        // TODO 코드 작성
+    });
+    // pcs.html.startActivity() 에 의하여 페이지가 이동되기 직전에 호출된다.
+    // 페이지를 이동하기 전에 처리해야 할 작업(ex 현재 화면의 데이터를 저장)을 위한 코드를 작성한다.
+    page.dom.bind("onStop", function() {
+        // TODO 코드 작성
+    });
+    // next 페이지에서 current 페이지로 복귀했을 때 호출된다.
+    // 두 번째 파라메터에는 next 페이지에서 전달한 결과값이 저장되어 있다. next 페이지에서 리턴받은
+    // 데이터를 처리하는 코드를 작성한다.
+    page.dom.bind("onRestart", function(event, data) {
+        // TODO 코드 작성
+    });
+    // pcs.html.finish() 에 의하여 페이지가 삭제되기 직전에 호출된다.
+    // 페이지가 삭제되기 전에 처리할 작업을 위한 코드를 작성한다.
+    page.dom.bind("onDestroy", function() {
+        // TODO 코드 작성
+    	if(pcs.html._is_login === true) {
+    		// 여기서 팝업으로 알리고 종료할것인가를 물어야한다.
+    		var msg = "로그인중입니다. 종료하시겠습니까?";
+    		if(confirm(msg)) {
+    			pcs.html.startActivity("../private/private_login.html");
+    		} else {
+    			return false;
+    		}
+    	}
+    });
+});

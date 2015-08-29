@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientMainInfo">
+	
+    <select id="getUserForClientList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 user_id,
+				 ifnull(client_nm, '') client_nm,
+				 ifnull(client_section, '') client_section,
+				 ifnull(client_birth, '') client_birth,
+				 ifnull(client_tadate, '') client_tadate,
+				 ifnull(client_tainterval, '') client_tainterval,
+				 ifnull(client_sex, 'm') client_sex,
+				 ifnull(client_marray, '') client_marray,
+				 ifnull(client_marray_dt, '') client_marray_dt,
+				 ifnull(client_birth_month, '') client_birth_month,
+				 ifnull(client_age, '') client_age,
+				 ifnull(client_job, '') client_job,
+				 ifnull(client_income, '') client_income,
+				 ifnull(client_property, '') client_property,
+				 ifnull(client_together, '') client_together,
+				 ifnull(client_month_income, '') client_month_income,
+				 ifnull(client_add_income, '') client_add_income,
+				 ifnull(client_year_income, '') client_year_income
+          from tb_client_main
+         where user_id = #{user_id}
+         	<choose>
+          	    <when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('Y', new_yn)">
+          	        and datediff(sysdate(), client_reg_date) &lt;= 7
+          	    </when>
+          	    <when test="@com.pcs.heaven.Common.util.MyBatisUtil@isEqual('N', new_yn)">
+          	        and datediff(sysdate(), client_reg_date) &gt; 7
+          	    </when>
+				<otherwise></otherwise>
+          	</choose>
+         order by main_seq desc
+    </select>
+    
+    <select id="getUserForClientInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select main_seq,
+				 user_id,
+				 ifnull(client_nm, '') client_nm,
+				 ifnull(client_section, '') client_section,
+				 ifnull(client_birth, '') client_birth,
+				 ifnull(client_tadate, '') client_tadate,
+				 ifnull(client_tainterval, '') client_tainterval,
+				 ifnull(client_sex, 'm') client_sex,
+				 ifnull(client_marray, '') client_marray,
+				 ifnull(client_marray_dt, '') client_marray_dt,
+				 ifnull(client_birth_month, '') client_birth_month,
+				 ifnull(client_age, '') client_age,
+				 ifnull(client_job, '') client_job,
+				 ifnull(client_income, '') client_income,
+				 ifnull(client_property, '') client_property,
+				 ifnull(client_together, '') client_together,
+				 ifnull(client_month_income, '') client_month_income,
+				 ifnull(client_add_income, '') client_add_income,
+				 ifnull(client_year_income, '') client_year_income
+          from tb_client_main
+         where user_id = #{user_id}
+            and main_seq = #{main_seq}         
+    </select>
+        
+    
+    <select id="getNextCd" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select ifnull(max(main_seq), 0)+1 nextcd
+		  from tb_client_main
+	</select>
+	
+	<insert id="insertIntoClientMainInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_client_main (
+		                                        main_seq,
+												user_id,
+												client_nm,
+												client_section,
+												client_birth,
+												client_tadate,
+												client_tainterval,
+												client_sex,
+												client_marray,
+												client_marray_dt,
+												client_birth_month,
+												client_age,
+												client_job,
+												client_income,
+												client_property,
+												client_together,
+												client_month_income,
+												client_add_income,
+												client_year_income,
+												client_reg_date
+												)
+									VALUES (
+												#{main_seq} ,
+												#{user_id} ,
+												#{client_nm} ,
+												#{client_section} ,
+												#{client_birth} ,
+												#{client_tadate} ,
+												#{client_tainterval} ,
+												#{client_sex} ,
+												#{client_marray} ,
+												#{client_marray_dt} ,
+												#{client_birth_month} ,
+												#{client_age} ,
+												#{client_job} ,
+												#{client_income} ,
+												#{client_property} ,
+												#{client_together} ,
+												#{client_month_income} ,
+												#{client_add_income} ,
+												#{client_year_income},
+												sysdate()
+											   )
+	</insert>
+	
+	<update id="updateIntoClientMainInfo" parameterType="java.util.HashMap">
+	    update tb_client_main set client_nm = #{client_nm},
+											client_section = #{client_section},
+											client_birth = #{client_birth},
+											client_tadate = #{client_tadate},
+											client_tainterval = #{client_tainterval},
+											client_sex = #{client_sex},
+											client_marray = #{client_marray},
+											client_marray_dt = #{client_marray_dt},
+											client_birth_month = #{client_birth_month},
+											client_age = #{client_age},
+											client_job = #{client_job},
+											client_income = #{client_income},
+											client_property = #{client_property},
+											client_together = #{client_together},
+											client_month_income = #{client_month_income},
+											client_add_income = #{client_add_income},
+											client_year_income  = #{client_year_income}
+		where user_id = #{user_id}
+		   and main_seq = #{main_seq}
+	</update>	    
+	
+	<delete id="deleteIntoClientMainInfo" parameterType="java.util.HashMap">
+	    delete from tb_client_main
+		where user_id = #{user_id}
+		   and main_seq = #{main_seq}
+	</delete>	    
+	    
+</mapper>
